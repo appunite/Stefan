@@ -44,8 +44,14 @@ public enum ItemsLoadableState<T: Equatable>: LoadableState {
             guard items.isEmpty == false else {
                 throw ItemsLoadableStateError.zeroItemsInLoadedState
             }
-            
             return items
+
+        case let .refreshing(silent, items):
+            guard silent else {
+                throw ItemsLoadableStateError.wrongStateForReadingItems
+            }
+            return items
+            
         default:
             throw ItemsLoadableStateError.wrongStateForReadingItems
         }

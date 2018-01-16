@@ -32,10 +32,25 @@
 		AD46DE2E200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE2D200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift */; };
 		AD46DE30200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE2F200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift */; };
 		AD46DE32200E05B900D0A5B8 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE31200E05B900D0A5B8 /* Comments.swift */; };
+		AD46DE3A200E065E00D0A5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE39200E065E00D0A5B8 /* AppDelegate.swift */; };
+		AD46DE3C200E065E00D0A5B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE3B200E065E00D0A5B8 /* ViewController.swift */; };
+		AD46DE3F200E065E00D0A5B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD46DE3D200E065E00D0A5B8 /* Main.storyboard */; };
+		AD46DE41200E065E00D0A5B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46DE40200E065E00D0A5B8 /* Assets.xcassets */; };
+		AD46DE44200E065E00D0A5B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD46DE42200E065E00D0A5B8 /* LaunchScreen.storyboard */; };
+		AD46DE4B200E06D500D0A5B8 /* FruitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4A200E06D500D0A5B8 /* FruitStorage.swift */; };
+		AD46DE4E200E06F700D0A5B8 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4D200E06F700D0A5B8 /* Fruit.swift */; };
+		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AD46DDF4200E015A00D0A5B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD46DDE0200E015A00D0A5B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD46DDE8200E015A00D0A5B8;
+			remoteInfo = Stefan;
+		};
+		AD46DE4F200E0DB500D0A5B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD46DDE0200E015A00D0A5B8 /* Project object */;
 			proxyType = 1;
@@ -73,6 +88,16 @@
 		AD46DE2D200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderDefaultViewDataSource.swift; sourceTree = "<group>"; };
 		AD46DE2F200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderDefaultView.swift; sourceTree = "<group>"; };
 		AD46DE31200E05B900D0A5B8 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		AD46DE37200E065E00D0A5B8 /* StefanExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StefanExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD46DE39200E065E00D0A5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD46DE3B200E065E00D0A5B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD46DE3E200E065E00D0A5B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD46DE40200E065E00D0A5B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD46DE43200E065E00D0A5B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD46DE45200E065E00D0A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD46DE4A200E06D500D0A5B8 /* FruitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStorage.swift; sourceTree = "<group>"; };
+		AD46DE4D200E06F700D0A5B8 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +116,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD46DE34200E065E00D0A5B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +131,7 @@
 			children = (
 				AD46DDEB200E015A00D0A5B8 /* Stefan */,
 				AD46DDF6200E015A00D0A5B8 /* StefanTests */,
+				AD46DE38200E065E00D0A5B8 /* StefanExample */,
 				AD46DDEA200E015A00D0A5B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +141,7 @@
 			children = (
 				AD46DDE9200E015A00D0A5B8 /* Stefan.framework */,
 				AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */,
+				AD46DE37200E065E00D0A5B8 /* StefanExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +218,46 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AD46DE38200E065E00D0A5B8 /* StefanExample */ = {
+			isa = PBXGroup;
+			children = (
+				AD46DE51200E141C00D0A5B8 /* Cells */,
+				AD46DE4C200E06ED00D0A5B8 /* Models */,
+				AD46DE49200E06BD00D0A5B8 /* Storage */,
+				AD46DE39200E065E00D0A5B8 /* AppDelegate.swift */,
+				AD46DE3B200E065E00D0A5B8 /* ViewController.swift */,
+				AD46DE3D200E065E00D0A5B8 /* Main.storyboard */,
+				AD46DE40200E065E00D0A5B8 /* Assets.xcassets */,
+				AD46DE42200E065E00D0A5B8 /* LaunchScreen.storyboard */,
+				AD46DE45200E065E00D0A5B8 /* Info.plist */,
+			);
+			path = StefanExample;
+			sourceTree = "<group>";
+		};
+		AD46DE49200E06BD00D0A5B8 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				AD46DE4A200E06D500D0A5B8 /* FruitStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		AD46DE4C200E06ED00D0A5B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD46DE4D200E06F700D0A5B8 /* Fruit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD46DE51200E141C00D0A5B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -234,6 +308,24 @@
 			productReference = AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AD46DE36200E065E00D0A5B8 /* StefanExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD46DE46200E065E00D0A5B8 /* Build configuration list for PBXNativeTarget "StefanExample" */;
+			buildPhases = (
+				AD46DE33200E065E00D0A5B8 /* Sources */,
+				AD46DE34200E065E00D0A5B8 /* Frameworks */,
+				AD46DE35200E065E00D0A5B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD46DE50200E0DB500D0A5B8 /* PBXTargetDependency */,
+			);
+			name = StefanExample;
+			productName = StefanExample;
+			productReference = AD46DE37200E065E00D0A5B8 /* StefanExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -253,6 +345,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					AD46DE36200E065E00D0A5B8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = AD46DDE3200E015A00D0A5B8 /* Build configuration list for PBXProject "Stefan" */;
@@ -261,6 +357,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AD46DDDF200E015A00D0A5B8;
 			productRefGroup = AD46DDEA200E015A00D0A5B8 /* Products */;
@@ -269,6 +366,7 @@
 			targets = (
 				AD46DDE8200E015A00D0A5B8 /* Stefan */,
 				AD46DDF1200E015A00D0A5B8 /* StefanTests */,
+				AD46DE36200E065E00D0A5B8 /* StefanExample */,
 			);
 		};
 /* End PBXProject section */
@@ -285,6 +383,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD46DE35200E065E00D0A5B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD46DE44200E065E00D0A5B8 /* LaunchScreen.storyboard in Resources */,
+				AD46DE41200E065E00D0A5B8 /* Assets.xcassets in Resources */,
+				AD46DE3F200E065E00D0A5B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +436,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD46DE33200E065E00D0A5B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD46DE4E200E06F700D0A5B8 /* Fruit.swift in Sources */,
+				AD46DE4B200E06D500D0A5B8 /* FruitStorage.swift in Sources */,
+				AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */,
+				AD46DE3C200E065E00D0A5B8 /* ViewController.swift in Sources */,
+				AD46DE3A200E065E00D0A5B8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -336,7 +456,31 @@
 			target = AD46DDE8200E015A00D0A5B8 /* Stefan */;
 			targetProxy = AD46DDF4200E015A00D0A5B8 /* PBXContainerItemProxy */;
 		};
+		AD46DE50200E0DB500D0A5B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD46DDE8200E015A00D0A5B8 /* Stefan */;
+			targetProxy = AD46DE4F200E0DB500D0A5B8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD46DE3D200E065E00D0A5B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD46DE3E200E065E00D0A5B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD46DE42200E065E00D0A5B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD46DE43200E065E00D0A5B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD46DDFB200E015A00D0A5B8 /* Debug */ = {
@@ -523,6 +667,34 @@
 			};
 			name = Release;
 		};
+		AD46DE47200E065E00D0A5B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StefanExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD46DE48200E065E00D0A5B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StefanExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -549,6 +721,15 @@
 			buildConfigurations = (
 				AD46DE01200E015A00D0A5B8 /* Debug */,
 				AD46DE02200E015A00D0A5B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD46DE46200E065E00D0A5B8 /* Build configuration list for PBXNativeTarget "StefanExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD46DE47200E065E00D0A5B8 /* Debug */,
+				AD46DE48200E065E00D0A5B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

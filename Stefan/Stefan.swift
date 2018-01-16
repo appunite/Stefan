@@ -18,7 +18,11 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public weak var reloadableView: ReloadableView?
     
-    private(set) var state: ItemsLoadableState<ItemType> = .idle
+    private var state: ItemsLoadableState<ItemType> = .idle
+    
+    public func getState() -> ItemsLoadableState<ItemType> {
+        return state
+    }
     
     public override init() {
         super.init()

@@ -11,22 +11,10 @@ import Foundation
 open class LoadableStatePlaceholderView: UIView {
     
     // setup functions to prepare labels, views etc ...
-    
-    //
-    // Function for setting up your custom view based on table view
-    // Default implementation is empty
-    //
-    
-    public func setup(withTableView tableView: UITableView!) {
-        
+
+    public func setupView() {
+
     }
     
-    //
-    // Function for setting up your custom view based on collection view
-    // Default implementation is empty
-    //
-    
-    public func setup(withCollectionView collectionView: UICollectionView!) {
-        
-    }
+
 }
