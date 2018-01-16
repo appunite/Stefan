@@ -207,8 +207,7 @@ extension SectionatedItemsLoadableState: Equatable {
 
 public protocol StateLoadableTableViewDelegate: class {
     
-    func shouldReload(tableView: UITableView!) -> Bool
-    func shouldReload(collectionView: UICollectionView!) -> Bool
+    func shouldReload(reloadableView: ReloadableView!) -> Bool
     
     var deletionAnimation: UITableViewRowAnimation { get } // check is available insertion animation for item ?
     var insertionAnimation: UITableViewRowAnimation { get } // check is available insertion animation for item ?
@@ -217,11 +216,7 @@ public protocol StateLoadableTableViewDelegate: class {
 
 extension StateLoadableTableViewDelegate {
     
-    public func shouldReload(tableView: UITableView!) -> Bool {
-        return true
-    }
-    
-    public func shouldReload(collectionView: UICollectionView!) -> Bool {
+    public func shouldReload(reloadableView: ReloadableView!) -> Bool {
         return true
     }
     
@@ -257,6 +252,31 @@ public protocol SectionatedItemsLoadableStateDiffer: class {
     
 }
 
+public protocol ReloadableView: class {
+    
+    func reload()
+    
+    // in future implement:
+    // begin updates
+    // end updates
+    // insertRows
+    // etc ...
+}
+
+extension UITableView: ReloadableView {
+    
+    public func reload() {
+        self.reloadData()
+    }
+}
+
+extension UICollectionView: ReloadableView {
+    
+    public func reload() {
+        self.reloadData()
+    }
+}
+
 public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, StateLoadableTableViewDelegate {
     
     public weak var delegate: StateLoadableTableViewDelegate?
@@ -265,9 +285,8 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public weak var placeholderPresenter: LoadableStatePlaceholderPresentable?
     
-    private(set) weak var tableView: UITableView?
-    private(set) weak var collectionView: UICollectionView?
-    
+    public weak var reloadableView: ReloadableView?
+
     private(set) var state: ItemsLoadableState<ItemType> = .idle
     
     public override init() {
@@ -294,51 +313,37 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
             
         case let .items(oldItems: oldItems, newItems: newItems):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
-            }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
+            if shouldReloadView() {
+                // apply diff or reload for table view
+                reloadableView?.reload()
             }
             
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
-            }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
-            }
-            
             placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
+
+            if shouldReloadView() {
+                // apply diff or reload for table view
+                reloadableView?.reload()
+            }
             
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
+            if shouldReloadView() {
+                // apply diff for or reload table view
+                reloadableView?.reload()
             }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
-            }
-            
+
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
         }
     }
     
-    private func shouldReloadTableView() -> Bool {
-        guard let tableView = self.tableView else { return false }
-        return delegate?.shouldReload(tableView: tableView) ?? true
+    private func shouldReloadView() -> Bool {
+        guard let reloadableView = self.reloadableView else { return false }
+        return delegate?.shouldReload(reloadableView: reloadableView) ?? true
     }
     
-    private func shouldReloadCollectionView() -> Bool {
-        guard let collectionView = self.collectionView else { return false }
-        return delegate?.shouldReload(collectionView: collectionView) ?? true
-    }
 }
 
 public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsLoadableStateDiffer, StateLoadableTableViewDelegate {
@@ -349,9 +354,8 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
     
     public weak var placeholderPresenter: LoadableStatePlaceholderPresentable?
     
-    private(set) weak var tableView: UITableView?
-    private(set) weak var collectionView: UICollectionView?
-    
+    public weak var reloadableView: ReloadableView?
+
     private(set) var state: SectionatedItemsLoadableState<ItemType> = .idle
     
     public override init() {
@@ -378,35 +382,25 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
             
         case let .sections(oldSections: oldSections, newSections: newSections):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
-            }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
+            if shouldReloadView() {
+                // apply diff for or reload table view
+                reloadableView?.reload()
             }
             
         case let .placeholderAndSections(oldSections: oldSections, newSections: newSections):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
-            }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
-            }
-            
             placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
+
+            if shouldReloadView() {
+                // apply diff for or reload table view
+                reloadableView?.reload()
+            }
             
         case let .sectionsAndPlaceholder(oldSections: oldSections, newSections: newSections):
             
-            if shouldReloadTableView() {
-                // apply diff for table view
-            }
-            
-            if shouldReloadCollectionView() {
-                // apply diff for collection view
+            if shouldReloadView() {
+                // apply diff for or reload table view
+                reloadableView?.reload()
             }
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
@@ -414,14 +408,9 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
         }
     }
     
-    private func shouldReloadTableView() -> Bool {
-        guard let tableView = self.tableView else { return false }
-        return delegate?.shouldReload(tableView: tableView) ?? true
-    }
-    
-    private func shouldReloadCollectionView() -> Bool {
-        guard let collectionView = self.collectionView else { return false }
-        return delegate?.shouldReload(collectionView: collectionView) ?? true
+    private func shouldReloadView() -> Bool {
+        guard let reloadableView = self.reloadableView else { return false }
+        return delegate?.shouldReload(reloadableView: reloadableView) ?? true
     }
 }
 
