@@ -1,23 +1,11 @@
-import Foundation
+//
+//  Comments.swift
+//  Stefan
+//
+//  Created by Szymon Mrozek on 16.01.2018.
+//  Copyright © 2018 AppUnite. All rights reserved.
+//
 
-//////////////////////
-// Stefan
-/////////////////////
-
-public protocol LoadableStateType {
-    associatedtype ItemType
-}
-
-public enum LoadableState<T> {
-    typealias ItemType = T
-    
-    case idle
-    case loading
-    case loaded(items: [T])
-    case refreshing
-    case noContent
-    case error(Error)
-}
 
 // Extension do arraya na loadable state
 // [T] ------> LoadableState<T>
