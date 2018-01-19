@@ -1,9 +1,0 @@
-{
-  "commitish" : "1.0.3",
-  "iOS" : [
-    {
-      "hash" : "94a84f8d0f86b091c09b24892dd8251f3d1d12dce4f6b83b54a8821dc671837d",
-      "name" : "Differ"
-    }
-  ]
-}
