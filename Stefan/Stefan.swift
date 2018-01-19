@@ -18,18 +18,21 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public weak var reloadableView: ReloadableView?
     
+    public let reloadingType: ReloadingType
+    
     private var state: ItemsLoadableState<ItemType> = .idle
     
     public func getState() -> ItemsLoadableState<ItemType> {
         return state
     }
     
-    public override init() {
+    public init(reloadingType: ReloadingType = .animated) {
+        self.reloadingType = reloadingType
         super.init()
         statesDiffer = self
         delegate = self
     }
-    
+
     public func load(newState: ItemsLoadableState<ItemType>) {
         let old = self.state
         self.state = newState
@@ -49,8 +52,13 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         case let .items(oldItems: oldItems, newItems: newItems):
             
             if shouldReloadView() {
-                // apply diff or reload for table view
-                reloadableView?.reload()
+
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
@@ -58,15 +66,25 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
             if shouldReloadView() {
-                // apply diff or reload for table view
-                reloadableView?.reload()
+
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             
             if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
+
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)

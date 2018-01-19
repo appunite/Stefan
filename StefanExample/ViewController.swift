@@ -38,6 +38,10 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
             self.stefan.load(newState: .loaded(items: FruitStorage.mediumFruits))
         })
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0 , execute: { [unowned self] in
+            self.stefan.load(newState: .loaded(items: FruitStorage.mediumFruits))
+        })
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0 , execute: { [unowned self] in
             self.stefan.load(newState: .noContent)
         })
@@ -46,14 +50,12 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
             let currentItems = (try? self.stefan.getState().items()) ?? []
             self.stefan.load(newState: .refreshing(silent: false, items: currentItems))
         })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0 , execute: { [unowned self] in
-            self.stefan.load(newState: .loaded(items: FruitStorage.smallFruits))
-        })
+
         
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
     }
+
 }
 
 

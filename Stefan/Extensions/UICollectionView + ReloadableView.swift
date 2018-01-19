@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import Differ
 
 extension UICollectionView: ReloadableView {
     
     public func reload() {
         self.reloadData()
+    }
+    
+    public func reloadAnimated<ItemType>(old: [ItemType], new: [ItemType]) where ItemType : Equatable {
+        self.animateItemChanges(oldData: old, newData: new)
+    }
+
+    public func reloadAnimated<ItemType>(old: [[ItemType]], new: [[ItemType]]) where ItemType : Equatable {
+        // TO DO
     }
 }

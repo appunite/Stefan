@@ -18,9 +18,12 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
     
     public weak var reloadableView: ReloadableView?
     
+    public let reloadingType: ReloadingType
+    
     private(set) var state: SectionatedItemsLoadableState<ItemType> = .idle
     
-    public override init() {
+    public init(reloadingType: ReloadingType = .animated) {
+        self.reloadingType = reloadingType
         super.init()
         statesDiffer = self
         delegate = self
@@ -45,8 +48,12 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
         case let .sections(oldSections: oldSections, newSections: newSections):
             
             if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldSections, new: newSections)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
         case let .placeholderAndSections(oldSections: oldSections, newSections: newSections):
@@ -54,15 +61,23 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
             if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldSections, new: newSections)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
         case let .sectionsAndPlaceholder(oldSections: oldSections, newSections: newSections):
             
             if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
+                switch reloadingType {
+                case .animated:
+                    reloadableView?.reloadAnimated(old: oldSections, new: newSections)
+                case .basic:
+                    reloadableView?.reload()
+                }
             }
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
