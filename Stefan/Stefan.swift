@@ -44,51 +44,38 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         
         switch reloadingResult {
         case .none:
+            
+            // nothing to do
             break
+            
         case .placeholder:
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
         case let .items(oldItems: oldItems, newItems: newItems):
             
-            if shouldReloadView() {
-
-                switch reloadingType {
-                case .animated:
-                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
-                case .basic:
-                    reloadableView?.reload()
-                }
-            }
+            reloadItems(old: oldItems, new: newItems)
             
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
-            if shouldReloadView() {
-
-                switch reloadingType {
-                case .animated:
-                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
-                case .basic:
-                    reloadableView?.reload()
-                }
-            }
+            reloadItems(old: oldItems, new: newItems)
             
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             
-            if shouldReloadView() {
-
-                switch reloadingType {
-                case .animated:
-                    reloadableView?.reloadAnimated(old: oldItems, new: newItems)
-                case .basic:
-                    reloadableView?.reload()
-                }
-            }
-            
+            reloadItems(old: oldItems, new: newItems)
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
+        }
+    }
+    
+    private func reloadItems(old: [ItemType], new: [ItemType]) {
+        guard shouldReloadView() else { return }
+        switch reloadingType {
+        case .animated:
+            reloadableView?.reloadAnimated(old: old, new: new)
+        case .basic:
+            reloadableView?.reload()
         }
     }
     
