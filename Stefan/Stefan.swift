@@ -20,10 +20,10 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public let reloadingType: ReloadingType
     
-    private var state: ItemsLoadableState<ItemType> = .idle
+    private var _state: ItemsLoadableState<ItemType> = .idle
     
-    public func getState() -> ItemsLoadableState<ItemType> {
-        return state
+    public var state: ItemsLoadableState<ItemType> {
+        return _state
     }
     
     public init(reloadingType: ReloadingType = .animated) {
@@ -35,7 +35,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
 
     public func load(newState: ItemsLoadableState<ItemType>) {
         let old = self.state
-        self.state = newState
+        self._state = newState
         
         guard let reloadingResult = statesDiffer?.load(newState: newState, withOld: old) else {
             assertionFailure("States differ not set when loading new state")

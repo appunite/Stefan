@@ -30,7 +30,7 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
         })
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0 , execute: { [unowned self] in
-            let currentItems = (try? self.stefan.getState().items()) ?? []
+            let currentItems = (try? self.stefan.state.items()) ?? []
             self.stefan.load(newState: .refreshing(silent: true, items: currentItems))
         })
         
@@ -47,10 +47,9 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
         })
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 8.0 , execute: { [unowned self] in
-            let currentItems = (try? self.stefan.getState().items()) ?? []
+            let currentItems = (try? self.stefan.state.items()) ?? []
             self.stefan.load(newState: .refreshing(silent: false, items: currentItems))
         })
-
         
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -62,12 +61,12 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stefan.getState().itemsCount
+        return stefan.state.itemsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         do {
-            let fruits = try stefan.getState().items()
+            let fruits = try stefan.state.items()
             let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell") as! FruitTableViewCell
             cell.bind(withFruit: fruits[indexPath.row])
             return cell
