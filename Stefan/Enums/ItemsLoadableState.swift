@@ -73,9 +73,11 @@ extension ItemsLoadableState: Equatable {
         case (.idle, .idle), (.loading, .loading), (.noContent, .noContent), (.error, .error):
             return true
         case (.refreshing(let lSilent, let lOldItems), .refreshing(let rSilent, let rOldItems)):
-            return lSilent == rSilent // DIFFER TO IMPLEMENT
+            let diff = lOldItems.diff(rOldItems)
+            return lSilent == rSilent && diff.count == 0
         case (.loaded(let lItems), .loaded(let rItems)):
-            return false // DIFFER TO IMPLEMENT
+            let diff = lItems.diff(rItems)
+            return diff.count == 0
         default:
             return false
         }

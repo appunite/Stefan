@@ -8,13 +8,14 @@
 
 import Foundation
 
-open class LoadableStatePlaceholderView: UIView {
+open class LoadableStatePlaceholderView: UIView { 
     
-    // setup functions to prepare labels, views etc ...
-
+    ///
+    /// Function setupView will be called after adding placeholder to view
+    ///
+    
     public func setupView() {
 
     }
     
-
 }

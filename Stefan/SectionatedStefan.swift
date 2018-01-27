@@ -10,6 +10,8 @@ import Foundation
 
 public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsLoadableStateDiffer, StateLoadableTableViewDelegate {
     
+    private typealias Section = [ItemType]
+    
     public weak var delegate: StateLoadableTableViewDelegate?
     
     public weak var statesDiffer: SectionatedItemsLoadableStateDiffer?
@@ -18,9 +20,12 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
     
     public weak var reloadableView: ReloadableView?
     
+    public let reloadingType: ReloadingType
+    
     private(set) var state: SectionatedItemsLoadableState<ItemType> = .idle
     
-    public override init() {
+    public init(reloadingType: ReloadingType = .animated) {
+        self.reloadingType = reloadingType
         super.init()
         statesDiffer = self
         delegate = self
@@ -37,36 +42,39 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
         
         switch reloadingResult {
         case .none:
+            
+            // nothing to do
             break
+            
         case .placeholder:
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
             
         case let .sections(oldSections: oldSections, newSections: newSections):
             
-            if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
-            }
+            reloadSections(old: oldSections, new: newSections)
             
         case let .placeholderAndSections(oldSections: oldSections, newSections: newSections):
             
             placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
-            if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
-            }
+            reloadSections(old: oldSections, new: newSections)
             
         case let .sectionsAndPlaceholder(oldSections: oldSections, newSections: newSections):
-            
-            if shouldReloadView() {
-                // apply diff for or reload table view
-                reloadableView?.reload()
-            }
-            
+
+            reloadSections(old: oldSections, new: newSections)
             placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
+
+        }
+    }
+    
+    private func reloadSections(old: [Section], new: [Section]) {
+        guard shouldReloadView() else { return }
+        
+        switch reloadingType {
+        case .animated:
+            reloadableView?.reloadAnimated(old: old, new: new)
+        case .basic:
+            reloadableView?.reload()
         }
     }
     

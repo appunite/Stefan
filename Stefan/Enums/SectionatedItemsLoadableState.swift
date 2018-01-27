@@ -109,12 +109,29 @@ extension SectionatedItemsLoadableState: Equatable {
         case (.idle, .idle), (.loading, .loading), (.noContent, .noContent), (.error, .error):
             return true
         case (.refreshing(let lSilent, let lOldSections), .refreshing(let rSilent, let rOldSections)):
-            return lSilent == rSilent // DIFFER TO IMPLEMENT
+            
+            guard lOldSections.count == rOldSections.count else { return false }
+            
+            for (sectionIndex, oldItems) in lOldSections.enumerated() {
+                guard oldItems.diff(rOldSections[sectionIndex]).count == 0 else { return false }
+            }
+            
+            return lSilent == rSilent
+            
         case (.loaded(let lSections), .loaded(let rSections)):
-            return false // DIFFER TO IMPLEMENT
+            
+            guard lSections.count == rSections.count else { return false }
+            
+            for (sectionIndex, oldItems) in lSections.enumerated() {
+                guard oldItems.diff(rSections[sectionIndex]).count == 0 else { return false }
+            }
+            
+            return true
+            
         default:
             return false
         }
+        
     }
 }
 

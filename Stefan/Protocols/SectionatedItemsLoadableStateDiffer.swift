@@ -10,9 +10,9 @@ import Foundation
 
 public protocol SectionatedItemsLoadableStateDiffer: class {
     
-    //
-    // If you want to provide custom states applier
-    //
+    ///
+    /// If you want you can provide custom states applier
+    ///
     
     func load<ItemType>(newState new: SectionatedItemsLoadableState<ItemType>, withOld old: SectionatedItemsLoadableState<ItemType>) -> SectionatedItemsReloadingResult<ItemType>
     
@@ -21,6 +21,8 @@ public protocol SectionatedItemsLoadableStateDiffer: class {
 extension SectionatedItemsLoadableStateDiffer {
     
     public func load<ItemType>(newState new: SectionatedItemsLoadableState<ItemType>, withOld old: SectionatedItemsLoadableState<ItemType>) -> SectionatedItemsReloadingResult<ItemType> {
+        
+        guard new != old else { return .none }
         
         switch(old, new) {
             

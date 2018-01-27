@@ -11,9 +11,9 @@ import Foundation
 
 public protocol ItemsLoadableStateDiffer: class {
     
-    //
-    // If you want to provide custom states applier
-    //
+    ///
+    /// If you want you can provide custom states applier
+    ///
     
     func load<ItemType>(newState new: ItemsLoadableState<ItemType>, withOld old: ItemsLoadableState<ItemType>) -> ItemReloadingResult<ItemType>
     
@@ -23,6 +23,8 @@ public protocol ItemsLoadableStateDiffer: class {
 extension ItemsLoadableStateDiffer {
     
     public func load<ItemType>(newState new: ItemsLoadableState<ItemType>, withOld old: ItemsLoadableState<ItemType>) -> ItemReloadingResult<ItemType> {
+        
+        guard new != old else { return .none }
         
         switch(old, new) {
             

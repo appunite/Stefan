@@ -12,9 +12,8 @@ public protocol ReloadableView: class {
     
     func reload()
     
-    // in future implement:
-    // begin updates
-    // end updates
-    // insertRows
-    // etc ...
+    func reloadAnimated<ItemType: Equatable>(old: [ItemType], new: [ItemType])
+    
+    func reloadAnimated<ItemType: Equatable>(old: [[ItemType]], new: [[ItemType]])
+
 }
