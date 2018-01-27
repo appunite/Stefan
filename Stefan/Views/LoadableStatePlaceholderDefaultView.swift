@@ -6,7 +6,7 @@
 //  Copyright © 2018 AppUnite. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholderView, ItemsLoadableStateBindable, SectionatedItemsLoadableStateBindable, LoadableStatePlaceholderDefaultViewDataSource {
    

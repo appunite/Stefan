@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */; };
-		AD46DDF3200E015A00D0A5B8 /* Stefan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
+		AD46DDF3200E015A00D0A5B8 /* Stefan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */; };
 		AD46DDF8200E015A00D0A5B8 /* StefanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */; };
 		AD46DDFA200E015A00D0A5B8 /* Stefan.h in Headers */ = {isa = PBXBuildFile; fileRef = AD46DDEC200E015A00D0A5B8 /* Stefan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD46DE05200E01D800D0A5B8 /* LoadableStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE04200E01D800D0A5B8 /* LoadableStateType.swift */; };
@@ -63,7 +63,7 @@
 
 /* Begin PBXFileReference section */
 		AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingType.swift; sourceTree = "<group>"; };
-		AD46DDE9200E015A00D0A5B8 /* Stefan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stefan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stefan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46DDEC200E015A00D0A5B8 /* Stefan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stefan.h; sourceTree = "<group>"; };
 		AD46DDED200E015A00D0A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StefanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD46DDF3200E015A00D0A5B8 /* Stefan.framework in Frameworks */,
+				AD46DDF3200E015A00D0A5B8 /* Stefan_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +145,7 @@
 		AD46DDEA200E015A00D0A5B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD46DDE9200E015A00D0A5B8 /* Stefan.framework */,
+				AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */,
 				AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */,
 				AD46DE37200E065E00D0A5B8 /* StefanExample.app */,
 			);
@@ -287,9 +287,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AD46DDE8200E015A00D0A5B8 /* Stefan */ = {
+		AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD46DDFD200E015A00D0A5B8 /* Build configuration list for PBXNativeTarget "Stefan" */;
+			buildConfigurationList = AD46DDFD200E015A00D0A5B8 /* Build configuration list for PBXNativeTarget "Stefan-iOS" */;
 			buildPhases = (
 				AD46DDE4200E015A00D0A5B8 /* Sources */,
 				AD46DDE5200E015A00D0A5B8 /* Frameworks */,
@@ -301,9 +301,9 @@
 			);
 			dependencies = (
 			);
-			name = Stefan;
+			name = "Stefan-iOS";
 			productName = Stefan;
-			productReference = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */;
+			productReference = AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AD46DDF1200E015A00D0A5B8 /* StefanTests */ = {
@@ -380,7 +380,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD46DDE8200E015A00D0A5B8 /* Stefan */,
+				AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */,
 				AD46DDF1200E015A00D0A5B8 /* StefanTests */,
 				AD46DE36200E065E00D0A5B8 /* StefanExample */,
 			);
@@ -488,12 +488,12 @@
 /* Begin PBXTargetDependency section */
 		AD46DDF5200E015A00D0A5B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD46DDE8200E015A00D0A5B8 /* Stefan */;
+			target = AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */;
 			targetProxy = AD46DDF4200E015A00D0A5B8 /* PBXContainerItemProxy */;
 		};
 		AD46DE50200E0DB500D0A5B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD46DDE8200E015A00D0A5B8 /* Stefan */;
+			target = AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */;
 			targetProxy = AD46DE4F200E0DB500D0A5B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -754,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD46DDFD200E015A00D0A5B8 /* Build configuration list for PBXNativeTarget "Stefan" */ = {
+		AD46DDFD200E015A00D0A5B8 /* Build configuration list for PBXNativeTarget "Stefan-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD46DDFE200E015A00D0A5B8 /* Debug */,
