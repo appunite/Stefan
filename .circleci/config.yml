@@ -1,0 +1,24 @@
+# iOS CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
+#
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "9.2.2"
+
+    steps:
+      - checkout
+
+      # Install Carthage Dependencies
+      - run:
+          name: Install CocoaPods
+          command: carthage update --platform ios
+
+      # Build the app and run tests
+      - run:
+          name: Build and run tests
+          command: carthage build --no-skip-current
