@@ -5,7 +5,7 @@
 Stefan is a framework that helps you to manage states in your collection views. Basically it is a middle man between data source and the view itself.
 It supports UITableView and UICollectionView out of box.
 
-Project is created and maintened by *Piotr Bernad* and *Szymon Mrozek*.
+Project is created and maintened by [b]Piotr Bernad[/b] and [b]Szymon Mrozek[/b].
 
 ### Project Status
 
