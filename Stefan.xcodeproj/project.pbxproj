@@ -42,6 +42,7 @@
 		AD46DE4E200E06F700D0A5B8 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4D200E06F700D0A5B8 /* Fruit.swift */; };
 		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
 		AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
+		ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		AD46DE4D200E06F700D0A5B8 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 		AD8ACAEF20109B1B00CBDD0A /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
+		ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				AD46DE17200E037000D0A5B8 /* UITableView + ReloadableView.swift */,
 				AD46DE19200E038A00D0A5B8 /* UICollectionView + ReloadableView.swift */,
+				ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				AD46DE09200E021D00D0A5B8 /* SectionatedLoadableState.swift in Sources */,
 				AD46DE0D200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift in Sources */,
 				AD46DE1E200E048500D0A5B8 /* SectionatedStefan.swift in Sources */,
+				ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */,
 				AD46DE11200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift in Sources */,
 				AD46DE0B200E027600D0A5B8 /* ItemsLoadableState.swift in Sources */,
 				AD46DE27200E053600D0A5B8 /* ItemsLoadableStateBindable.swift in Sources */,

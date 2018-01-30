@@ -10,9 +10,12 @@ import UIKit
 
 public protocol LoadableStatePlaceholderPresentable: class {
     
-    var placeholderView: LoadableStatePlaceholderView! { get set }
+    weak var placeholderView: LoadableStatePlaceholderView? { get set }
+    weak var placeholderContainer: UIView! { get }
     
-    func addPlaceholderView(to view: UIView)
+    func addPlaceholderView()
+    func removePlaceholderView()
+    
     func customPlaceholderView() -> LoadableStatePlaceholderView
     
     func reloadPlaceholder<ItemType>(forState newState: SectionatedItemsLoadableState<ItemType>)
@@ -31,6 +34,10 @@ extension LoadableStatePlaceholderPresentable {
     
     public func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>) {
         
+        if self.placeholderView == nil {
+            self.addPlaceholderView()
+        }
+        
         guard let bindablePlaceholder = self.placeholderView as? ItemsLoadableStateBindable else {
             fatalError("Placeholder has to be ItemsLoadableStateBindable when using ItemsLoadableState")
         }
@@ -40,6 +47,10 @@ extension LoadableStatePlaceholderPresentable {
     
     public func reloadPlaceholder<ItemType>(forState newState: SectionatedItemsLoadableState<ItemType>) {
         
+        if self.placeholderView == nil {
+            self.addPlaceholderView()
+        }
+        
         guard let bindablePlaceholder = self.placeholderView as? SectionatedItemsLoadableStateBindable else {
             fatalError("Placeholder has to be SectionatedItemsLoadableStateBindable when using SectionatedItemsLoadableState")
         }
@@ -47,24 +58,30 @@ extension LoadableStatePlaceholderPresentable {
         bindablePlaceholder.bind(withState: newState)
     }
     
-    public func addPlaceholderView(to view: UIView) {
+    public func addPlaceholderView() {
         
         let placeholder = customPlaceholderView()
         
         placeholder.translatesAutoresizingMaskIntoConstraints = false
         
-        view.insertSubview(placeholder, at: 0)
+        placeholderContainer.insertSubview(placeholder, at: 0)
         
         let constraints = [
-            placeholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            placeholder.topAnchor.constraint(equalTo: view.topAnchor),
-            placeholder.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            placeholder.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            placeholder.heightAnchor.constraint(equalTo: placeholderContainer.heightAnchor),
+            placeholder.widthAnchor.constraint(equalTo: placeholderContainer.widthAnchor),
+            placeholder.centerXAnchor.constraint(equalTo: placeholderContainer.centerXAnchor),
+            placeholder.centerYAnchor.constraint(equalTo: placeholderContainer.centerYAnchor)
         ]
         
         NSLayoutConstraint.activate(constraints)
         
         self.placeholderView = placeholder
         placeholder.setupView()
+    }
+    
+    public func removePlaceholderView() {
+        
+        self.placeholderView?.removeFromSuperview()
+        self.placeholderView = nil
     }
 }

@@ -7,19 +7,16 @@
 //
 
 import UIKit
-import Stefan
+import Stefan_iOS
 
-class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    var placeholderView: LoadableStatePlaceholderView!
+class ViewController: UITableViewController, LoadableStatePlaceholderPresentable {
+        
+    weak var placeholderView: LoadableStatePlaceholderView?
     var stefan = Stefan<Fruit>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addPlaceholderView(to: self.view)
         stefan.placeholderPresenter = self
         stefan.reloadableView = tableView
 
@@ -51,20 +48,19 @@ class ViewController: UIViewController, LoadableStatePlaceholderPresentable {
             self.stefan.load(newState: .refreshing(silent: false, items: currentItems))
         })
         
-        tableView.dataSource = self
         tableView.tableFooterView = UIView()
     }
 
 }
 
 
-extension ViewController: UITableViewDataSource {
+extension ViewController {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stefan.state.itemsCount
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         do {
             let fruits = try stefan.state.items()
             let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell") as! FruitTableViewCell
