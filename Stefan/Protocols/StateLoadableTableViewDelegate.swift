@@ -13,15 +13,6 @@ public protocol StateLoadableTableViewDelegate: class {
     func shouldReload(reloadableView: ReloadableView!) -> Bool
     func shouldDisplayPlaceholder<ItemType>(forState state: ItemsLoadableState<ItemType>) -> Bool
     func shouldDisplayPlaceholder<ItemType>(forState state: SectionatedItemsLoadableState<ItemType>) -> Bool
-    
-    // should animate on in if yes - with what kind of animation
-    // should animate on out
-    // will show
-    // did show
-    // will disappear
-    // did disappear
-    
-    // did tap
 
 }
 
