@@ -45,12 +45,17 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         switch reloadingResult {
         case .none:
             
-            // nothing to do
-            break
+            if shouldDisplayPlaceholder(forState: newState) == false {
+                placeholderPresenter?.removePlaceholderView()
+            }
             
         case .placeholder:
             
-            placeholderPresenter?.reloadPlaceholder(forState: newState)
+            if shouldDisplayPlaceholder(forState: newState) {
+                placeholderPresenter?.reloadPlaceholder(forState: newState)
+            } else {
+                placeholderPresenter?.removePlaceholderView()
+            }
             
         case let .items(oldItems: oldItems, newItems: newItems):
             
@@ -58,14 +63,21 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
             
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
             
-            placeholderPresenter?.reloadPlaceholder(forState: newState)
+            if shouldDisplayPlaceholder(forState: newState) {
+                placeholderPresenter?.reloadPlaceholder(forState: newState)
+            } else {
+                placeholderPresenter?.removePlaceholderView()
+            }
             reloadItems(old: oldItems, new: newItems)
             
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             
             reloadItems(old: oldItems, new: newItems)
-            placeholderPresenter?.reloadPlaceholder(forState: newState)
-            
+            if shouldDisplayPlaceholder(forState: newState) {
+                placeholderPresenter?.reloadPlaceholder(forState: newState)
+            } else {
+                placeholderPresenter?.removePlaceholderView()
+            }
         }
     }
     
@@ -82,6 +94,10 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     private func shouldReloadView() -> Bool {
         guard let reloadableView = self.reloadableView else { return false }
         return delegate?.shouldReload(reloadableView: reloadableView) ?? true
+    }
+    
+    private func shouldDisplayPlaceholder(forNewState state: ItemsLoadableState<ItemType>) -> Bool {
+        return delegate?.shouldDisplayPlaceholder(forState: state) ?? false
     }
     
 }

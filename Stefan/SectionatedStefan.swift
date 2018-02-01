@@ -43,8 +43,9 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
         switch reloadingResult {
         case .none:
             
-            // nothing to do
-            break
+            if shouldDisplayPlaceholder(forState: newState) == false {
+                placeholderPresenter?.removePlaceholderView()
+            }
             
         case .placeholder:
             
@@ -56,13 +57,21 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
             
         case let .placeholderAndSections(oldSections: oldSections, newSections: newSections):
             
-            placeholderPresenter?.reloadPlaceholder(forState: newState)
+            if shouldDisplayPlaceholder(forState: newState) {
+                placeholderPresenter?.reloadPlaceholder(forState: newState)
+            } else {
+                placeholderPresenter?.removePlaceholderView()
+            }
             reloadSections(old: oldSections, new: newSections)
             
         case let .sectionsAndPlaceholder(oldSections: oldSections, newSections: newSections):
 
             reloadSections(old: oldSections, new: newSections)
-            placeholderPresenter?.reloadPlaceholder(forState: newState)
+            if shouldDisplayPlaceholder(forState: newState) {
+                placeholderPresenter?.reloadPlaceholder(forState: newState)
+            } else {
+                placeholderPresenter?.removePlaceholderView()
+            }
 
         }
     }
@@ -81,5 +90,9 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
     private func shouldReloadView() -> Bool {
         guard let reloadableView = self.reloadableView else { return false }
         return delegate?.shouldReload(reloadableView: reloadableView) ?? true
+    }
+    
+    private func shouldDisplayPlaceholder(forNewState state: SectionatedItemsLoadableState<ItemType>) -> Bool {
+        return delegate?.shouldDisplayPlaceholder(forState: state) ?? false
     }
 }
