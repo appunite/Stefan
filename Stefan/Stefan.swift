@@ -45,9 +45,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         switch reloadingResult {
         case .none:
             
-            if shouldDisplayPlaceholder(forState: newState) {
-                break
-            } else {
+            if shouldDisplayPlaceholder(forState: newState) == false {
                 placeholderPresenter?.removePlaceholderView()
             }
             

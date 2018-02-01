@@ -43,8 +43,9 @@ public class SectionatedStefan<ItemType: Equatable>: NSObject, SectionatedItemsL
         switch reloadingResult {
         case .none:
             
-            // nothing to do
-            break
+            if shouldDisplayPlaceholder(forState: newState) == false {
+                placeholderPresenter?.removePlaceholderView()
+            }
             
         case .placeholder:
             
