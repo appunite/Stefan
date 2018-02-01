@@ -31,5 +31,4 @@ class FruitTableViewCell: UITableViewCell {
         }
     }
 
-
 }

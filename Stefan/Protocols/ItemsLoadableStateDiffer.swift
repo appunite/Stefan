@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public protocol ItemsLoadableStateDiffer: class {
     
     ///
@@ -19,9 +18,9 @@ public protocol ItemsLoadableStateDiffer: class {
     
 }
 
-
 extension ItemsLoadableStateDiffer {
     
+    //swiftlint:disable:next cyclomatic_complexity
     public func load<ItemType>(newState new: ItemsLoadableState<ItemType>, withOld old: ItemsLoadableState<ItemType>) -> ItemReloadingResult<ItemType> {
         
         guard new != old else { return .none }
@@ -60,7 +59,7 @@ extension ItemsLoadableStateDiffer {
             
             return .items(oldItems: oldItems, newItems: newItems)
             
-        case (.refreshing(_ , let oldItems), .loaded(let newItems)):
+        case (.refreshing(_, let oldItems), .loaded(let newItems)):
             
             return .placeholderAndItems(oldItems: oldItems, newItems: newItems)
             
@@ -103,4 +102,3 @@ extension ItemsLoadableStateDiffer {
         }
     }
 }
-

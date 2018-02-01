@@ -29,7 +29,7 @@ struct Fruit {
 
 extension Fruit: Equatable {
     
-    static func ==(lhs: Fruit, rhs: Fruit) -> Bool {
+    static func == (lhs: Fruit, rhs: Fruit) -> Bool {
         return lhs.name == rhs.name &&
                lhs.size == rhs.size
     }

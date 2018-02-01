@@ -23,14 +23,12 @@ public protocol LoadableStatePlaceholderPresentable: class {
     
 }
 
-
 extension LoadableStatePlaceholderPresentable {
     
     public func customPlaceholderView() -> LoadableStatePlaceholderView {
         
         return LoadableStatePlaceholderDefaultView()
     }
-    
     
     public func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>) {
         

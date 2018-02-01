@@ -58,7 +58,7 @@ extension SectionatedItemsLoadableStateDiffer {
             
             return .sections(oldSections: oldSections, newSections: newSections)
             
-        case (.refreshing(_ , let oldSections), .loaded(let newSections)):
+        case (.refreshing(_, let oldSections), .loaded(let newSections)):
             
             return .placeholderAndSections(oldSections: oldSections, newSections: newSections)
             

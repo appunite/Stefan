@@ -12,4 +12,3 @@ public protocol LoadableStateType {
     
     associatedtype ItemType
 }
-

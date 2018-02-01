@@ -29,7 +29,6 @@ public protocol LoadableStatePlaceholderDefaultViewDataSource: class {
 
 }
 
-
 extension LoadableStatePlaceholderDefaultViewDataSource {
     
     public func title<ItemType>(forState state: ItemsLoadableState<ItemType>) -> String {

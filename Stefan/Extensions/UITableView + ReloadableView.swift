@@ -15,15 +15,14 @@ extension UITableView: ReloadableView {
         self.reloadData()
     }
 
-    public func reloadAnimated<ItemType>(old: [ItemType], new: [ItemType]) where ItemType : Equatable {
+    public func reloadAnimated<ItemType>(old: [ItemType], new: [ItemType]) where ItemType: Equatable {
         let diff = old.extendedDiff(new)
         
         // for now lets use fade animation, but we need to implement that better
         self.apply(diff, deletionAnimation: .fade, insertionAnimation: .fade)
     }
     
-    public func reloadAnimated<ItemType>(old: [[ItemType]], new: [[ItemType]]) where ItemType : Equatable {
+    public func reloadAnimated<ItemType>(old: [[ItemType]], new: [[ItemType]]) where ItemType: Equatable {
         // TO DO 
     }
 }
-

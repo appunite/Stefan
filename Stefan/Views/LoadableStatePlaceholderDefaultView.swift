@@ -36,7 +36,6 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
     
     weak var dataSource: LoadableStatePlaceholderDefaultViewDataSource?
     
-    
     ///
     /// Labels / Activity Indicator can be modified directly (ex. font, colors, etc.)
     ///
@@ -85,7 +84,7 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
         let constraints = [
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: metrics.verticalOffset),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: metrics.verticalOffset)
             ]
         
         NSLayoutConstraint.activate(constraints)

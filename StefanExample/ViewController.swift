@@ -22,28 +22,28 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
 
         stefan.load(newState: .loading)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: { [unowned self] in
             self.stefan.load(newState: .loaded(items: FruitStorage.bigFruits))
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [unowned self] in
             let currentItems = (try? self.stefan.state.items()) ?? []
             self.stefan.load(newState: .refreshing(silent: true, items: currentItems))
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: { [unowned self] in
             self.stefan.load(newState: .loaded(items: FruitStorage.mediumFruits))
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [unowned self] in
             self.stefan.load(newState: .loaded(items: FruitStorage.mediumFruits))
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: { [unowned self] in
             self.stefan.load(newState: .noContent)
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0 , execute: { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: { [unowned self] in
             let currentItems = (try? self.stefan.state.items()) ?? []
             self.stefan.load(newState: .refreshing(silent: false, items: currentItems))
         })
@@ -52,7 +52,6 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
     }
 
 }
-
 
 extension ViewController {
     
@@ -63,13 +62,12 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         do {
             let fruits = try stefan.state.items()
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell") as! FruitTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell") as! FruitTableViewCell //swiftlint:disable:this force_cast
             cell.bind(withFruit: fruits[indexPath.row])
             return cell
-        } catch (let error) {
+        } catch let error {
             assertionFailure(error.localizedDescription)
             return UITableViewCell()
         }
     }
 }
-

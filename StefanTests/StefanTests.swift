@@ -24,7 +24,6 @@ class StefanTests: XCTestCase {
     }
     
     func testPerformanceExample() {
-
         
     }
     
