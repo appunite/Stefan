@@ -1,5 +1,5 @@
 //
-//  StateLoadableTableViewDelegate.swift
+//  StefanDelegate.swift
 //  Stefan
 //
 //  Created by Szymon Mrozek on 16.01.2018.
