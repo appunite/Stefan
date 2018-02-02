@@ -18,7 +18,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public let reloadingType: ReloadingType
     
-    private var _state: ItemsLoadableState<ItemType> = .idle
+    public var _state: ItemsLoadableState<ItemType> = .idle // teporary public for writing reactive extension
     
     public var state: ItemsLoadableState<ItemType> {
         return _state
