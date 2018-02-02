@@ -8,10 +8,8 @@
 
 import Foundation
 
-public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, StateLoadableTableViewDelegate {
-    
-    public weak var delegate: StateLoadableTableViewDelegate?
-    
+public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, StefanDelegate {
+
     public weak var statesDiffer: ItemsLoadableStateDiffer?
     
     public weak var placeholderPresenter: LoadableStatePlaceholderPresentable?
@@ -26,11 +24,28 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         return _state
     }
     
+    // MARK: - Delegate
+    public var shouldReload: ((ReloadableView!) -> Bool) = { _ in return true }
+    
+    public var didChangeState: ((ItemsLoadableState<ItemType>) -> Void) = { _ in }
+    
+    public var shouldDisplayPlaceholder: ((ItemsLoadableState<ItemType>) -> Bool) = { state in
+        switch state {
+        case .idle, .loaded:
+            return false
+        case .refreshing(let silent, _):
+            return silent == false
+        default:
+            return true
+        }
+    }
+    
+    // MARK: - Init
+    
     public init(reloadingType: ReloadingType = .animated) {
         self.reloadingType = reloadingType
         super.init()
         statesDiffer = self
-        delegate = self
     }
 
     public func load(newState: ItemsLoadableState<ItemType>) {
@@ -45,13 +60,13 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         switch reloadingResult {
         case .none:
             
-            if shouldDisplayPlaceholder(forState: newState) == false {
+            if shouldDisplayPlaceholder(newState) == false {
                 placeholderPresenter?.removePlaceholderView()
             }
             
         case .placeholder:
             
-            if shouldDisplayPlaceholder(forState: newState) {
+            if shouldDisplayPlaceholder(newState) {
                 placeholderPresenter?.reloadPlaceholder(forState: newState)
             } else {
                 placeholderPresenter?.removePlaceholderView()
@@ -63,7 +78,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
             
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
             
-            if shouldDisplayPlaceholder(forState: newState) {
+            if shouldDisplayPlaceholder(newState) {
                 placeholderPresenter?.reloadPlaceholder(forState: newState)
             } else {
                 placeholderPresenter?.removePlaceholderView()
@@ -73,12 +88,14 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             
             reloadItems(old: oldItems, new: newItems)
-            if shouldDisplayPlaceholder(forState: newState) {
+            if shouldDisplayPlaceholder(newState) {
                 placeholderPresenter?.reloadPlaceholder(forState: newState)
             } else {
                 placeholderPresenter?.removePlaceholderView()
             }
         }
+        
+        didChangeState(newState)
     }
     
     private func reloadItems(old: [ItemType], new: [ItemType]) {
@@ -93,11 +110,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     private func shouldReloadView() -> Bool {
         guard let reloadableView = self.reloadableView else { return false }
-        return delegate?.shouldReload(reloadableView: reloadableView) ?? true
-    }
-    
-    private func shouldDisplayPlaceholder(forNewState state: ItemsLoadableState<ItemType>) -> Bool {
-        return delegate?.shouldDisplayPlaceholder(forState: state) ?? false
+        return shouldReload(reloadableView)
     }
     
 }

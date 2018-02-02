@@ -44,6 +44,7 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue", size: 15)
+        label.textColor = .white
         
         return label
     }()
@@ -52,6 +53,7 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue", size: 12)
+        label.textColor = .white
         
         return label
     }()
@@ -59,7 +61,7 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
     public lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.frame = CGRect(origin: CGPoint.zero, size: metrics.activityIndicatorSize)
-        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
         return activityIndicator
     }()

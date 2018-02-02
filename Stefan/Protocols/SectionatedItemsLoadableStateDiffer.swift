@@ -20,6 +20,7 @@ public protocol SectionatedItemsLoadableStateDiffer: class {
 
 extension SectionatedItemsLoadableStateDiffer {
     
+    //swiftlint:disable:next cyclomatic_complexity
     public func load<ItemType>(newState new: SectionatedItemsLoadableState<ItemType>, withOld old: SectionatedItemsLoadableState<ItemType>) -> SectionatedItemsReloadingResult<ItemType> {
         
         guard new != old else { return .none }
