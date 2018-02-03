@@ -83,11 +83,7 @@ extension SectionatedItemsLoadableStateDiffer {
             
             fatalError("Wrong change of state - loading should not occur after refreshing")
             
-        case (.loaded, .loading):
-            
-            fatalError("Wrong change of state - loading should not occur after loaded")
-            
-        case (.loaded(let oldSections), .noContent), (.loaded(let oldSections), .error):
+        case (.loaded(let oldSections), .noContent), (.loaded(let oldSections), .error), (.loaded(let oldSections), .loading):
             
             return .sectionsAndPlaceholder(oldSections: oldSections, newSections: [])
             

@@ -83,11 +83,7 @@ extension ItemsLoadableStateDiffer {
             
             fatalError("Wrong change of state - loading should not occur after refreshing")
             
-        case (.loaded, .loading):
-            
-            fatalError("Wrong change of state - loading should not occur after loaded")
-            
-        case (.loaded(let oldItems), .noContent), (.loaded(let oldItems), .error):
+        case (.loaded(let oldItems), .noContent), (.loaded(let oldItems), .error), (.loaded(let oldItems), .loading):
             
             return .itemsAndPlaceholder(oldItems: oldItems, newItems: [])
             
