@@ -17,6 +17,7 @@ public protocol LoadableStatePlaceholderPresentable: class {
     func removePlaceholderView()
     
     func customPlaceholderView() -> LoadableStatePlaceholderView
+    func isDisplayingPlaceholder() -> Bool
     
     func reloadPlaceholder<ItemType>(forState newState: SectionatedItemsLoadableState<ItemType>)
     func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>)
@@ -75,6 +76,10 @@ extension LoadableStatePlaceholderPresentable {
         
         self.placeholderView = placeholder
         placeholder.setupView()
+    }
+    
+    public func isDisplayingPlaceholder() -> Bool {
+        return placeholderView != nil
     }
     
     public func removePlaceholderView() {
