@@ -49,7 +49,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     }
 
     public func load(newState: ItemsLoadableState<ItemType>) {
-        let old = self.state
+        let old = self._state
         self._state = newState
         
         guard let reloadingResult = statesDiffer?.load(newState: newState, withOld: old) else {
