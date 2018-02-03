@@ -18,7 +18,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     public let reloadingType: ReloadingType
     
-    public var _state: ItemsLoadableState<ItemType> = .idle // teporary public for writing reactive extension
+    private var _state: ItemsLoadableState<ItemType> = .idle // teporary public for writing reactive extension
     
     public var state: ItemsLoadableState<ItemType> {
         return _state
@@ -42,7 +42,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, St
     
     // MARK: - Init
     
-    public init(reloadingType: ReloadingType = .animated) {
+    public init(reloadingType: ReloadingType = .basic) {
         self.reloadingType = reloadingType
         super.init()
         statesDiffer = self
