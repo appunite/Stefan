@@ -11,7 +11,18 @@ import Stefan_iOS
 
 class ViewController: UITableViewController, LoadableStatePlaceholderPresentable {
         
-    weak var placeholderView: LoadableStatePlaceholderView?
+    weak var placeholderView: LoadableStatePlaceholderView? {
+        didSet {
+            guard let defaultView = placeholderView as? LoadableStatePlaceholderDefaultView else {
+                return
+            }
+            
+            defaultView.titleLabel.textColor = .black
+            defaultView.subtitleLabel.textColor = .black
+            defaultView.activityIndicator.color = .black
+        }
+    }
+    
     var stefan = Stefan<Fruit>()
 
     override func viewDidLoad() {
@@ -50,7 +61,6 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
         
         tableView.tableFooterView = UIView()
     }
-
 }
 
 extension ViewController {
