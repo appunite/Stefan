@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */; };
+		AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C34202719FE00486A0A /* StefanDifferTests.swift */; };
+		AD127C3720271A4100486A0A /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C3620271A4100486A0A /* Fruit.swift */; };
+		AD127C3920271A5700486A0A /* FruitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C3820271A5700486A0A /* FruitStorage.swift */; };
 		AD46DDF3200E015A00D0A5B8 /* Stefan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */; };
 		AD46DDF8200E015A00D0A5B8 /* StefanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */; };
 		AD46DDFA200E015A00D0A5B8 /* Stefan.h in Headers */ = {isa = PBXBuildFile; fileRef = AD46DDEC200E015A00D0A5B8 /* Stefan.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingType.swift; sourceTree = "<group>"; };
+		AD127C34202719FE00486A0A /* StefanDifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanDifferTests.swift; sourceTree = "<group>"; };
+		AD127C3620271A4100486A0A /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		AD127C3820271A5700486A0A /* FruitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStorage.swift; sourceTree = "<group>"; };
 		AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stefan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46DDEC200E015A00D0A5B8 /* Stefan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stefan.h; sourceTree = "<group>"; };
 		AD46DDED200E015A00D0A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,8 +183,11 @@
 		AD46DDF6200E015A00D0A5B8 /* StefanTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD127C34202719FE00486A0A /* StefanDifferTests.swift */,
 				AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */,
 				AD46DDF9200E015A00D0A5B8 /* Info.plist */,
+				AD127C3620271A4100486A0A /* Fruit.swift */,
+				AD127C3820271A5700486A0A /* FruitStorage.swift */,
 			);
 			path = StefanTests;
 			sourceTree = "<group>";
@@ -460,6 +469,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD127C3920271A5700486A0A /* FruitStorage.swift in Sources */,
+				AD127C3720271A4100486A0A /* Fruit.swift in Sources */,
+				AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */,
 				AD46DDF8200E015A00D0A5B8 /* StefanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
