@@ -23,7 +23,7 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
         }
     }
     
-    var stefan = Stefan<Fruit>()
+    var stefan = Stefan<Fruit>(reloadingType: .animated)
 
     override func viewDidLoad() {
         super.viewDidLoad()
