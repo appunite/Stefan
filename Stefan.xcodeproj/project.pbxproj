@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD06B8EE202758BF000A1736 /* ItemsLoadableStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */; };
 		AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */; };
 		AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C34202719FE00486A0A /* StefanDifferTests.swift */; };
 		AD127C3720271A4100486A0A /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C3620271A4100486A0A /* Fruit.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableStateTests.swift; sourceTree = "<group>"; };
 		AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingType.swift; sourceTree = "<group>"; };
 		AD127C34202719FE00486A0A /* StefanDifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanDifferTests.swift; sourceTree = "<group>"; };
 		AD127C3620271A4100486A0A /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
@@ -183,11 +185,12 @@
 		AD46DDF6200E015A00D0A5B8 /* StefanTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD127C34202719FE00486A0A /* StefanDifferTests.swift */,
-				AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */,
-				AD46DDF9200E015A00D0A5B8 /* Info.plist */,
 				AD127C3620271A4100486A0A /* Fruit.swift */,
 				AD127C3820271A5700486A0A /* FruitStorage.swift */,
+				AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */,
+				AD46DDF9200E015A00D0A5B8 /* Info.plist */,
+				AD127C34202719FE00486A0A /* StefanDifferTests.swift */,
+				AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */,
 			);
 			path = StefanTests;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD06B8EE202758BF000A1736 /* ItemsLoadableStateTests.swift in Sources */,
 				AD127C3920271A5700486A0A /* FruitStorage.swift in Sources */,
 				AD127C3720271A4100486A0A /* Fruit.swift in Sources */,
 				AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */,

@@ -30,9 +30,8 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
+
     }
     
     func testFromIdleToOther() {
@@ -42,9 +41,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         var diffResult = self.load(newState: new, withOld: old)
         var expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
         
         old = .idle
         new = .noContent
@@ -52,9 +49,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         diffResult = self.load(newState: new, withOld: old)
         expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     
@@ -65,9 +60,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadingToLoading() {
@@ -77,9 +70,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNoContentToNoContent() {
@@ -89,9 +80,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNoContentToLoading() {
@@ -101,9 +90,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadingToNoContent() {
@@ -113,9 +100,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromErrorToNoContent() {
@@ -125,9 +110,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadingToLoaded() {
@@ -137,9 +120,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNoContentToLoaded() {
@@ -149,9 +130,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromErrorToLoaded() {
@@ -161,9 +140,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadedToLoaded() {
@@ -173,9 +150,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.items(oldItems: FruitStorage.mediumFruits, newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromRefreshingToLoaded() {
@@ -185,9 +160,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: FruitStorage.mediumFruits, newItems: FruitStorage.bigFruits)
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNoContentToSilentRefresh() {
@@ -197,9 +170,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNoContentToNonSilentRefresh() {
@@ -209,9 +180,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadedToSilentRefresh() {
@@ -221,9 +190,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadedToNonSilentRefresh() {
@@ -233,9 +200,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromLoadedToNoContent() {
@@ -245,9 +210,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromSilentRefreshToNoContent() {
@@ -257,9 +220,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testFromNonSilentRefreshToNoContent() {
@@ -269,9 +230,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
-        if expectedResult != diffResult {
-            XCTFail()
-        }
+        XCTAssertEqual(expectedResult, diffResult)
     }
     
     func testDifferentResults() {
@@ -282,9 +241,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         let diffResult = self.load(newState: new, withOld: old)
         let wrongResult = ItemReloadingResult<Fruit>.none
         
-        if wrongResult == diffResult {
-            XCTFail()
-        }
+        XCTAssertNotEqual(wrongResult, diffResult)
     }
     
 }
