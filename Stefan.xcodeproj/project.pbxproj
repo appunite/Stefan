@@ -45,6 +45,7 @@
 		AD46DE4B200E06D500D0A5B8 /* FruitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4A200E06D500D0A5B8 /* FruitStorage.swift */; };
 		AD46DE4E200E06F700D0A5B8 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4D200E06F700D0A5B8 /* Fruit.swift */; };
 		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
+		AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */; };
 		AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
 		ADB93944202466D80085590A /* SectionatedStefanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB93943202466D80085590A /* SectionatedStefanDelegate.swift */; };
 		ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */; };
@@ -112,6 +113,7 @@
 		AD46DE4A200E06D500D0A5B8 /* FruitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStorage.swift; sourceTree = "<group>"; };
 		AD46DE4D200E06F700D0A5B8 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
+		AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanTestController.swift; sourceTree = "<group>"; };
 		AD8ACAEF20109B1B00CBDD0A /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
 		ADB93943202466D80085590A /* SectionatedStefanDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedStefanDelegate.swift; sourceTree = "<group>"; };
 		ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				AD46DDF9200E015A00D0A5B8 /* Info.plist */,
 				AD127C34202719FE00486A0A /* StefanDifferTests.swift */,
 				AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */,
+				AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */,
 			);
 			path = StefanTests;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */,
 				AD06B8EE202758BF000A1736 /* ItemsLoadableStateTests.swift in Sources */,
 				AD127C3920271A5700486A0A /* FruitStorage.swift in Sources */,
 				AD127C3720271A4100486A0A /* Fruit.swift in Sources */,

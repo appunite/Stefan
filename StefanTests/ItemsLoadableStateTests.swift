@@ -42,7 +42,7 @@ class ItemsLoadableStateTests: XCTestCase {
         do {
             _ = try state.items()
         } catch {
-            XCTFail()
+            XCTFail("Should not throw error")
         }
     }
     
@@ -52,10 +52,10 @@ class ItemsLoadableStateTests: XCTestCase {
         
         do {
             _ = try state.items()
-            XCTFail()
+            XCTFail("Should not return items without error")
         } catch let error {
             guard let stateError = error as? ItemsLoadableState<Fruit>.ItemsLoadableStateError, stateError == ItemsLoadableState<Fruit>.ItemsLoadableStateError.zeroItemsInLoadedState else {
-                XCTFail()
+                XCTFail("Wrong error thrown")
                 return
             }
         }
@@ -68,7 +68,7 @@ class ItemsLoadableStateTests: XCTestCase {
         do {
             _ = try state.items()
         } catch {
-            XCTFail()
+            XCTFail("Should not throw error")
         }
     }
     
@@ -78,10 +78,10 @@ class ItemsLoadableStateTests: XCTestCase {
         
         do {
             _ = try state.items()
-            XCTFail()
+            XCTFail("Should not return items without error")
         } catch let error {
             guard let stateError = error as? ItemsLoadableState<Fruit>.ItemsLoadableStateError, stateError == ItemsLoadableState<Fruit>.ItemsLoadableStateError.wrongStateForReadingItems else {
-                XCTFail()
+                XCTFail("Wrong error thrown")
                 return
             }
         }
@@ -97,10 +97,10 @@ class ItemsLoadableStateTests: XCTestCase {
             _ = try idleState.items()
             _ = try noContentState.items()
             _ = try loadingState.items()
-            XCTFail()
+            XCTFail("Should not return items without error")
         } catch let error {
             guard let stateError = error as? ItemsLoadableState<Fruit>.ItemsLoadableStateError, stateError == ItemsLoadableState<Fruit>.ItemsLoadableStateError.wrongStateForReadingItems else {
-                XCTFail()
+                XCTFail("Wrong error thrown")
                 return
             }
         }
