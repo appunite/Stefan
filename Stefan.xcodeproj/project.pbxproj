@@ -17,26 +17,18 @@
 		AD46DDFA200E015A00D0A5B8 /* Stefan.h in Headers */ = {isa = PBXBuildFile; fileRef = AD46DDEC200E015A00D0A5B8 /* Stefan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD46DE05200E01D800D0A5B8 /* LoadableStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE04200E01D800D0A5B8 /* LoadableStateType.swift */; };
 		AD46DE07200E01F800D0A5B8 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE06200E01F800D0A5B8 /* LoadableState.swift */; };
-		AD46DE09200E021D00D0A5B8 /* SectionatedLoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE08200E021D00D0A5B8 /* SectionatedLoadableState.swift */; };
 		AD46DE0B200E027600D0A5B8 /* ItemsLoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE0A200E027600D0A5B8 /* ItemsLoadableState.swift */; };
-		AD46DE0D200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE0C200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift */; };
-		AD46DE0F200E02FF00D0A5B8 /* StefanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE0E200E02FF00D0A5B8 /* StefanDelegate.swift */; };
 		AD46DE11200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE10200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift */; };
-		AD46DE13200E033500D0A5B8 /* SectionatedItemsLoadableStateDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE12200E033500D0A5B8 /* SectionatedItemsLoadableStateDiffer.swift */; };
 		AD46DE15200E034C00D0A5B8 /* ReloadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE14200E034C00D0A5B8 /* ReloadableView.swift */; };
 		AD46DE18200E037000D0A5B8 /* UITableView + ReloadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE17200E037000D0A5B8 /* UITableView + ReloadableView.swift */; };
 		AD46DE1A200E038A00D0A5B8 /* UICollectionView + ReloadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE19200E038A00D0A5B8 /* UICollectionView + ReloadableView.swift */; };
 		AD46DE1C200E047800D0A5B8 /* Stefan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE1B200E047800D0A5B8 /* Stefan.swift */; };
-		AD46DE1E200E048500D0A5B8 /* SectionatedStefan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE1D200E048500D0A5B8 /* SectionatedStefan.swift */; };
 		AD46DE21200E04B200D0A5B8 /* ItemReloadingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE20200E04B200D0A5B8 /* ItemReloadingResult.swift */; };
-		AD46DE23200E04C900D0A5B8 /* SectionatedItemsReloadingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE22200E04C900D0A5B8 /* SectionatedItemsReloadingResult.swift */; };
 		AD46DE25200E050400D0A5B8 /* LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE24200E050400D0A5B8 /* LoadableStatePlaceholderPresentable.swift */; };
 		AD46DE27200E053600D0A5B8 /* ItemsLoadableStateBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE26200E053600D0A5B8 /* ItemsLoadableStateBindable.swift */; };
-		AD46DE29200E054200D0A5B8 /* SectionatedItemsLoadableStateBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE28200E054200D0A5B8 /* SectionatedItemsLoadableStateBindable.swift */; };
 		AD46DE2C200E056400D0A5B8 /* LoadableStatePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE2B200E056400D0A5B8 /* LoadableStatePlaceholderView.swift */; };
 		AD46DE2E200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE2D200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift */; };
 		AD46DE30200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE2F200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift */; };
-		AD46DE32200E05B900D0A5B8 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE31200E05B900D0A5B8 /* Comments.swift */; };
 		AD46DE3A200E065E00D0A5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE39200E065E00D0A5B8 /* AppDelegate.swift */; };
 		AD46DE3C200E065E00D0A5B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE3B200E065E00D0A5B8 /* ViewController.swift */; };
 		AD46DE3F200E065E00D0A5B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD46DE3D200E065E00D0A5B8 /* Main.storyboard */; };
@@ -47,7 +39,6 @@
 		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
 		AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */; };
 		AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
-		ADB93944202466D80085590A /* SectionatedStefanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB93943202466D80085590A /* SectionatedStefanDelegate.swift */; };
 		ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */; };
 		ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */; };
 /* End PBXBuildFile section */
@@ -83,26 +74,18 @@
 		AD46DDF9200E015A00D0A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD46DE04200E01D800D0A5B8 /* LoadableStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStateType.swift; sourceTree = "<group>"; };
 		AD46DE06200E01F800D0A5B8 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableState.swift; sourceTree = "<group>"; };
-		AD46DE08200E021D00D0A5B8 /* SectionatedLoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedLoadableState.swift; sourceTree = "<group>"; };
 		AD46DE0A200E027600D0A5B8 /* ItemsLoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableState.swift; sourceTree = "<group>"; };
-		AD46DE0C200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedItemsLoadableState.swift; sourceTree = "<group>"; };
-		AD46DE0E200E02FF00D0A5B8 /* StefanDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanDelegate.swift; sourceTree = "<group>"; };
 		AD46DE10200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableStateDiffer.swift; sourceTree = "<group>"; };
-		AD46DE12200E033500D0A5B8 /* SectionatedItemsLoadableStateDiffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedItemsLoadableStateDiffer.swift; sourceTree = "<group>"; };
 		AD46DE14200E034C00D0A5B8 /* ReloadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableView.swift; sourceTree = "<group>"; };
 		AD46DE17200E037000D0A5B8 /* UITableView + ReloadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + ReloadableView.swift"; sourceTree = "<group>"; };
 		AD46DE19200E038A00D0A5B8 /* UICollectionView + ReloadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ReloadableView.swift"; sourceTree = "<group>"; };
 		AD46DE1B200E047800D0A5B8 /* Stefan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stefan.swift; sourceTree = "<group>"; };
-		AD46DE1D200E048500D0A5B8 /* SectionatedStefan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedStefan.swift; sourceTree = "<group>"; };
 		AD46DE20200E04B200D0A5B8 /* ItemReloadingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemReloadingResult.swift; sourceTree = "<group>"; };
-		AD46DE22200E04C900D0A5B8 /* SectionatedItemsReloadingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedItemsReloadingResult.swift; sourceTree = "<group>"; };
 		AD46DE24200E050400D0A5B8 /* LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderPresentable.swift; sourceTree = "<group>"; };
 		AD46DE26200E053600D0A5B8 /* ItemsLoadableStateBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableStateBindable.swift; sourceTree = "<group>"; };
-		AD46DE28200E054200D0A5B8 /* SectionatedItemsLoadableStateBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedItemsLoadableStateBindable.swift; sourceTree = "<group>"; };
 		AD46DE2B200E056400D0A5B8 /* LoadableStatePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderView.swift; sourceTree = "<group>"; };
 		AD46DE2D200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderDefaultViewDataSource.swift; sourceTree = "<group>"; };
 		AD46DE2F200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableStatePlaceholderDefaultView.swift; sourceTree = "<group>"; };
-		AD46DE31200E05B900D0A5B8 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		AD46DE37200E065E00D0A5B8 /* StefanExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StefanExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46DE39200E065E00D0A5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD46DE3B200E065E00D0A5B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +98,6 @@
 		AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 		AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanTestController.swift; sourceTree = "<group>"; };
 		AD8ACAEF20109B1B00CBDD0A /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
-		ADB93943202466D80085590A /* SectionatedStefanDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionatedStefanDelegate.swift; sourceTree = "<group>"; };
 		ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
 		ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,8 +160,6 @@
 				AD46DDEC200E015A00D0A5B8 /* Stefan.h */,
 				AD46DDED200E015A00D0A5B8 /* Info.plist */,
 				AD46DE1B200E047800D0A5B8 /* Stefan.swift */,
-				AD46DE1D200E048500D0A5B8 /* SectionatedStefan.swift */,
-				AD46DE31200E05B900D0A5B8 /* Comments.swift */,
 			);
 			path = Stefan;
 			sourceTree = "<group>";
@@ -203,15 +183,10 @@
 			children = (
 				AD46DE04200E01D800D0A5B8 /* LoadableStateType.swift */,
 				AD46DE06200E01F800D0A5B8 /* LoadableState.swift */,
-				AD46DE08200E021D00D0A5B8 /* SectionatedLoadableState.swift */,
-				AD46DE0E200E02FF00D0A5B8 /* StefanDelegate.swift */,
-				ADB93943202466D80085590A /* SectionatedStefanDelegate.swift */,
 				AD46DE10200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift */,
-				AD46DE12200E033500D0A5B8 /* SectionatedItemsLoadableStateDiffer.swift */,
 				AD46DE14200E034C00D0A5B8 /* ReloadableView.swift */,
 				AD46DE24200E050400D0A5B8 /* LoadableStatePlaceholderPresentable.swift */,
 				AD46DE26200E053600D0A5B8 /* ItemsLoadableStateBindable.swift */,
-				AD46DE28200E054200D0A5B8 /* SectionatedItemsLoadableStateBindable.swift */,
 				AD46DE2D200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift */,
 			);
 			path = Protocols;
@@ -232,9 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AD46DE0A200E027600D0A5B8 /* ItemsLoadableState.swift */,
-				AD46DE0C200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift */,
 				AD46DE20200E04B200D0A5B8 /* ItemReloadingResult.swift */,
-				AD46DE22200E04C900D0A5B8 /* SectionatedItemsReloadingResult.swift */,
 				AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */,
 			);
 			path = Enums;
@@ -445,26 +418,17 @@
 				AD46DE1C200E047800D0A5B8 /* Stefan.swift in Sources */,
 				AD46DE25200E050400D0A5B8 /* LoadableStatePlaceholderPresentable.swift in Sources */,
 				AD46DE2C200E056400D0A5B8 /* LoadableStatePlaceholderView.swift in Sources */,
-				AD46DE0F200E02FF00D0A5B8 /* StefanDelegate.swift in Sources */,
 				AD46DE1A200E038A00D0A5B8 /* UICollectionView + ReloadableView.swift in Sources */,
 				AD46DE2E200E057300D0A5B8 /* LoadableStatePlaceholderDefaultViewDataSource.swift in Sources */,
 				AD46DE30200E05A600D0A5B8 /* LoadableStatePlaceholderDefaultView.swift in Sources */,
 				AD46DE15200E034C00D0A5B8 /* ReloadableView.swift in Sources */,
 				AD46DE05200E01D800D0A5B8 /* LoadableStateType.swift in Sources */,
-				AD46DE09200E021D00D0A5B8 /* SectionatedLoadableState.swift in Sources */,
-				AD46DE0D200E029D00D0A5B8 /* SectionatedItemsLoadableState.swift in Sources */,
-				AD46DE1E200E048500D0A5B8 /* SectionatedStefan.swift in Sources */,
 				ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */,
 				AD46DE11200E032C00D0A5B8 /* ItemsLoadableStateDiffer.swift in Sources */,
 				ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */,
 				AD46DE0B200E027600D0A5B8 /* ItemsLoadableState.swift in Sources */,
 				AD46DE27200E053600D0A5B8 /* ItemsLoadableStateBindable.swift in Sources */,
-				AD46DE32200E05B900D0A5B8 /* Comments.swift in Sources */,
-				AD46DE23200E04C900D0A5B8 /* SectionatedItemsReloadingResult.swift in Sources */,
-				ADB93944202466D80085590A /* SectionatedStefanDelegate.swift in Sources */,
-				AD46DE13200E033500D0A5B8 /* SectionatedItemsLoadableStateDiffer.swift in Sources */,
 				AD46DE07200E01F800D0A5B8 /* LoadableState.swift in Sources */,
-				AD46DE29200E054200D0A5B8 /* SectionatedItemsLoadableStateBindable.swift in Sources */,
 				AD46DE18200E037000D0A5B8 /* UITableView + ReloadableView.swift in Sources */,
 				AD46DE21200E04B200D0A5B8 /* ItemReloadingResult.swift in Sources */,
 				AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */,

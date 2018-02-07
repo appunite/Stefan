@@ -14,6 +14,4 @@ public protocol ReloadableView: class {
     
     func reloadAnimated<ItemType: Equatable>(old: [ItemType], new: [ItemType])
     
-    func reloadAnimated<ItemType: Equatable>(old: [[ItemType]], new: [[ItemType]])
-
 }
