@@ -6,7 +6,6 @@
 //  Copyright © 2018 AppUnite. All rights reserved.
 //
 
-
 // Extension do arraya na loadable state
 // [T] ------> LoadableState<T>
 

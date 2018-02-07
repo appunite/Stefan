@@ -20,6 +20,7 @@ public protocol SectionatedItemsLoadableStateDiffer: class {
 
 extension SectionatedItemsLoadableStateDiffer {
     
+    //swiftlint:disable:next cyclomatic_complexity
     public func load<ItemType>(newState new: SectionatedItemsLoadableState<ItemType>, withOld old: SectionatedItemsLoadableState<ItemType>) -> SectionatedItemsReloadingResult<ItemType> {
         
         guard new != old else { return .none }
@@ -58,7 +59,7 @@ extension SectionatedItemsLoadableStateDiffer {
             
             return .sections(oldSections: oldSections, newSections: newSections)
             
-        case (.refreshing(_ , let oldSections), .loaded(let newSections)):
+        case (.refreshing(_, let oldSections), .loaded(let newSections)):
             
             return .placeholderAndSections(oldSections: oldSections, newSections: newSections)
             
@@ -82,11 +83,7 @@ extension SectionatedItemsLoadableStateDiffer {
             
             fatalError("Wrong change of state - loading should not occur after refreshing")
             
-        case (.loaded, .loading):
-            
-            fatalError("Wrong change of state - loading should not occur after loaded")
-            
-        case (.loaded(let oldSections), .noContent), (.loaded(let oldSections), .error):
+        case (.loaded(let oldSections), .noContent), (.loaded(let oldSections), .error), (.loaded(let oldSections), .loading):
             
             return .sectionsAndPlaceholder(oldSections: oldSections, newSections: [])
             

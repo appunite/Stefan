@@ -104,7 +104,7 @@ public enum SectionatedItemsLoadableState<T: Equatable>: SectionatedLoadableStat
 
 extension SectionatedItemsLoadableState: Equatable {
     
-    public static func ==(lhs: SectionatedItemsLoadableState<T>, rhs: SectionatedItemsLoadableState<T>) -> Bool {
+    public static func == (lhs: SectionatedItemsLoadableState<T>, rhs: SectionatedItemsLoadableState<T>) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle), (.loading, .loading), (.noContent, .noContent), (.error, .error):
             return true
@@ -134,4 +134,3 @@ extension SectionatedItemsLoadableState: Equatable {
         
     }
 }
-

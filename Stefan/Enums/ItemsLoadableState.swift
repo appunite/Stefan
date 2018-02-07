@@ -68,7 +68,7 @@ public enum ItemsLoadableState<T: Equatable>: LoadableState {
 
 extension ItemsLoadableState: Equatable {
     
-    public static func ==(lhs: ItemsLoadableState<T>, rhs: ItemsLoadableState<T>) -> Bool {
+    public static func == (lhs: ItemsLoadableState<T>, rhs: ItemsLoadableState<T>) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle), (.loading, .loading), (.noContent, .noContent), (.error, .error):
             return true
