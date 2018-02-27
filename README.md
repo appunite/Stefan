@@ -4,11 +4,15 @@
 
 As a mobile developers we all have to handle displaying collections of data. But is it always as simple as it sounds? 
 
-![Stefan spaghetti](resources/stefan_spaghetti.png)
+<p align="center">
+  <img src="resources/stefan_spaghetti.png" alt="Stefan spaghetti"/>
+</p>
 
 Looks like spaghetti? It's common situation that application displays data / placeholders (which may be different depends for example on loading state) and some of us end with defining states and tangle everything together. 
 
-![Stefan overview](resources/stefan_overview.png)
+<p align="center">
+  <img src="resources/stefan_overview.png" alt="Stefan overview"/>
+</p>
 
 Stefan is a framework that helps you to manage states in your collection views. Basically it is a middle man between data source and the view itself. Of course it supports UITableView and UICollectionView out of box, but it's up to you to decide what is your **ReloadableView** and what is **PlaceholderView**. It contains most commonly used states that might occur when loading data collection. 
 
