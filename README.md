@@ -1,4 +1,6 @@
-# Stefan
+<p align="center">
+  <img src="resources/stefan_logo.png" alt="Stefan logo"/>
+</p>
 
 ## Why?
 
