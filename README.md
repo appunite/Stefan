@@ -107,3 +107,7 @@ The project is under development now. It is not ready to use in production yet. 
 Project is created and maintened by **Piotr Bernad** and **Szymon Mrozek**.
 
 We could use your help with reporting or fixing bugs. We would like to also hear from you about features suggestions. If you have some idea how to make Stefan better please send us Pull Request.
+
+### License
+
+Stefan is released under an MIT license. See [License.md](License.md) for more information.
