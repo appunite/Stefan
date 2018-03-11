@@ -110,4 +110,4 @@ We could use your help with reporting or fixing bugs. We would like to also hear
 
 ### License
 
-Stefan is released under an MIT license. See [License.md](License.md) for more information.
+Stefan is released under an MIT license. See [License.md](LICENSE.md) for more information.
