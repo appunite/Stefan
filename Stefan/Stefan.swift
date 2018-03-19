@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer, StefanDelegate {
+public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer {
 
     public weak var statesDiffer: ItemsLoadableStateDiffer?
     

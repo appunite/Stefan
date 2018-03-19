@@ -10,19 +10,29 @@ import Foundation
 
 public enum ItemReloadingResult<ItemType: Equatable> {
     
-    // nothing to change on screen
+    ///
+    /// Nothing to change on screen
+    ///
     case none
     
-    // only placeholder
+    ///
+    /// Placeholder only
+    ///
     case placeholder
     
-    // only collection
+    ///
+    /// Items only
+    ///
     case items(oldItems: [ItemType], newItems: [ItemType])
     
-    // first placeholder then collection
+    ///
+    /// First placeholder then collection
+    ///
     case placeholderAndItems(oldItems: [ItemType], newItems: [ItemType])
     
-    // first collection then placeholder
+    ///
+    /// First collection then placeholder
+    ///
     case itemsAndPlaceholder(oldItems: [ItemType], newItems: [ItemType])
     
 }

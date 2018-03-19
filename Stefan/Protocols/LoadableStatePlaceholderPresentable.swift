@@ -10,16 +10,28 @@ import UIKit
 
 public protocol LoadableStatePlaceholderPresentable: class {
     
+    ///
+    /// Placeholder is accessible from here and can be customized
+    ///
     weak var placeholderView: LoadableStatePlaceholderView? { get set }
     weak var placeholderContainer: UIView! { get }
     
     func addPlaceholderView()
     func removePlaceholderView()
     
+    ///
+    /// Custom placeholder provider
+    ///
     func customPlaceholderView() -> LoadableStatePlaceholderView
+    
+    ///
+    /// Indicates is placeholder visible on the screen
+    ///
     func isDisplayingPlaceholder() -> Bool
     
-    func reloadPlaceholder<ItemType>(forState newState: SectionatedItemsLoadableState<ItemType>)
+    ///
+    /// Reload placeholder implicilty for needed state (should be avoided)
+    ///
     func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>)
     
 }
@@ -39,19 +51,6 @@ extension LoadableStatePlaceholderPresentable {
         
         guard let bindablePlaceholder = self.placeholderView as? ItemsLoadableStateBindable else {
             fatalError("Placeholder has to be ItemsLoadableStateBindable when using ItemsLoadableState")
-        }
-        
-        bindablePlaceholder.bind(withState: newState)
-    }
-    
-    public func reloadPlaceholder<ItemType>(forState newState: SectionatedItemsLoadableState<ItemType>) {
-        
-        if self.placeholderView == nil {
-            self.addPlaceholderView()
-        }
-        
-        guard let bindablePlaceholder = self.placeholderView as? SectionatedItemsLoadableStateBindable else {
-            fatalError("Placeholder has to be SectionatedItemsLoadableStateBindable when using SectionatedItemsLoadableState")
         }
         
         bindablePlaceholder.bind(withState: newState)

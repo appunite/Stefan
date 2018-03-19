@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholderView, ItemsLoadableStateBindable, SectionatedItemsLoadableStateBindable, LoadableStatePlaceholderDefaultViewDataSource {
+public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholderView, ItemsLoadableStateBindable, LoadableStatePlaceholderDefaultViewDataSource {
    
     ///
     /// Metrics should be provided in init
@@ -118,21 +118,6 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
     ///
     
     public func bind<ItemType>(withState state: ItemsLoadableState<ItemType>) {
-        self.titleLabel.text = dataSource?.title(forState: state)
-        self.subtitleLabel.text = dataSource?.subtitle(forState: state)
-        
-        if dataSource?.shouldIndicatorAnimate(forState: state) ?? false {
-            self.activityIndicator.startAnimating()
-        } else {
-            self.activityIndicator.stopAnimating()
-        }
-    }
-    
-    ///
-    /// Binds SectionatedItemsLoadableState with labels / activityIndicator ...
-    ///
-    
-    public func bind<T>(withState state: SectionatedItemsLoadableState<T>) {
         self.titleLabel.text = dataSource?.title(forState: state)
         self.subtitleLabel.text = dataSource?.subtitle(forState: state)
         

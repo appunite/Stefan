@@ -17,16 +17,44 @@ public enum ItemsLoadableState<T: Equatable>: LoadableState {
     
     public typealias ItemType = T
     
+    ///
+    /// Initial state
+    ///
     case idle
+    
+    ///
+    /// Items are loading right now
+    ///
     case loading
+    
+    ///
+    /// No items to show
+    ///
     case noContent
+    
+    ///
+    /// Loaded non-empty items
+    ///
     case loaded(items: [ItemType])
+    
+    ///
+    /// Refreshing content (mostly from .loaded state)
+    /// If silent is set to true placeholder will not be presented
+    ///
     case refreshing(silent: Bool, items: [ItemType])
     case error(Error)
+    
+    ///
+    /// State might be initialied with items array, result is .loaded(...) when not empty or .noContent
+    ///
     
     public init(_ items: [ItemType]) {
         self = ItemsLoadableState.setStateForItems(items)
     }
+    
+    ///
+    /// Get items count from loaded state or 0
+    ///
     
     public var itemsCount: Int {
         switch self {
@@ -36,6 +64,10 @@ public enum ItemsLoadableState<T: Equatable>: LoadableState {
             return 0
         }
     }
+    
+    ///
+    /// Get items - should be called only in non-empty .loaded state, in other case wrongStateForReadingItems or zeroItemsInLoadedState will be thrown
+    ///
     
     public func items() throws -> [ItemType] {
         
