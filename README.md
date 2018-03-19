@@ -94,10 +94,6 @@ Then run `carthage update`.
 
 For now there is no support for Cocoapods.
 
-### Project Status
-
-The project is under development now. It is not ready to use in production yet. We are drafting the idea now. We do not reccomend using it in production before we make our code well tested.
-
 ### Known issues
 
 • Nothing yet
