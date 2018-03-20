@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '10.0'
   s.dependency "Differ", "~> 1.0.3"
+  s.swift_version = "4.0"
 
   s.source       = { :git => "https://github.com/appunite/Stefan.git", :tag => "#{s.version}" }
   s.source_files  = "Stefan/**/*.swift"
