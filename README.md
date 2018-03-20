@@ -92,7 +92,13 @@ Then run `carthage update`.
 
 ### Cocoapods
 
-For now there is no support for Cocoapods.
+Add the following entry in your Podfile
+
+```
+pod 'Stefan'
+```
+
+Then run `pod install`.
 
 ### Known issues
 
