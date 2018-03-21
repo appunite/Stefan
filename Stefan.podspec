@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                 'Piotr Bernad'  => 'http://bernad.paperplane.io' }
 
   s.platform     = :ios
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.3'
   s.dependency "Differ", "~> 1.0.3"
   s.swift_version = "4.0"
 
