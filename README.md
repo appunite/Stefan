@@ -79,6 +79,11 @@ Please remember that this is a weak object so you have to handle retaining it.
 
 Stefan has a `Differ` dependency which is needed for performing fast operations on collections while comparing. When initializing Stefan you are able to provide reloading type which might be `animated` or `basic`. By default animations are disabled, but when you'll enable it Stefan will handle collection animation automatically by himself.
 
+### RxStefan
+
+We've added some **RxSwift** extensions for **Stefan** please follow [this repo](https://github.com/appunite/RxStefan).
+
+
 ### Carthage
 
 Add the following entry in your Cartfile:
