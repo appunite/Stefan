@@ -56,7 +56,9 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer {
             assertionFailure("States differ not set when loading new state")
             return
         }
-        
+
+        didChangeState(newState)
+
         switch reloadingResult {
         case .none:
             
@@ -94,8 +96,6 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer {
                 placeholderPresenter?.removePlaceholderView()
             }
         }
-        
-        didChangeState(newState)
     }
     
     public func reloadPlaceholder() {
