@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Stefan"
-  s.version      = "0.2.1"
+  s.version      = "0.2.2"
   s.summary      = "Stefan - a guy that helps you to manage iOS data collections."
 
   s.homepage     = "https://github.com/appunite/Stefan"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
   s.ios.deployment_target = '9.3'
-  s.dependency "Differ", "~> 1.0.3"
+  s.dependency "Differ", "~> 1.2.0"
   s.swift_version = "4.0"
 
   s.source       = { :git => "https://github.com/appunite/Stefan.git", :tag => "#{s.version}" }
