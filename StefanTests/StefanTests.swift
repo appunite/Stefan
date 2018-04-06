@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Stefan_iOS
+@testable import Stefan
 
 class StefanTests: XCTestCase {
     

@@ -12,7 +12,6 @@
 		AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C34202719FE00486A0A /* StefanDifferTests.swift */; };
 		AD127C3720271A4100486A0A /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C3620271A4100486A0A /* Fruit.swift */; };
 		AD127C3920271A5700486A0A /* FruitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C3820271A5700486A0A /* FruitStorage.swift */; };
-		AD46DDF3200E015A00D0A5B8 /* Stefan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */; };
 		AD46DDF8200E015A00D0A5B8 /* StefanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DDF7200E015A00D0A5B8 /* StefanTests.swift */; };
 		AD46DDFA200E015A00D0A5B8 /* Stefan.h in Headers */ = {isa = PBXBuildFile; fileRef = AD46DDEC200E015A00D0A5B8 /* Stefan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD46DE05200E01D800D0A5B8 /* LoadableStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE04200E01D800D0A5B8 /* LoadableStateType.swift */; };
@@ -39,18 +38,16 @@
 		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
 		AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */; };
 		AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
+		ADE50A9B2077B4B000E4660C /* Stefan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
+		ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
+		ADE50A9E2077B54A00E4660C /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
+		ADE50A9F2077B58200E4660C /* Differ.framework in Resources */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
+		ADE50AA32077B65600E4660C /* Differ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */; };
 		ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AD46DDF4200E015A00D0A5B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD46DDE0200E015A00D0A5B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD46DDE8200E015A00D0A5B8;
-			remoteInfo = Stefan;
-		};
 		AD46DE4F200E0DB500D0A5B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD46DDE0200E015A00D0A5B8 /* Project object */;
@@ -58,7 +55,27 @@
 			remoteGlobalIDString = AD46DDE8200E015A00D0A5B8;
 			remoteInfo = Stefan;
 		};
+		ADE50AA02077B5A300E4660C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD46DDE0200E015A00D0A5B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD46DDE8200E015A00D0A5B8;
+			remoteInfo = "Stefan-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ADE50AA22077B64A00E4660C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ADE50AA32077B65600E4660C /* Differ.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableStateTests.swift; sourceTree = "<group>"; };
@@ -66,7 +83,7 @@
 		AD127C34202719FE00486A0A /* StefanDifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanDifferTests.swift; sourceTree = "<group>"; };
 		AD127C3620271A4100486A0A /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		AD127C3820271A5700486A0A /* FruitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStorage.swift; sourceTree = "<group>"; };
-		AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stefan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD46DDE9200E015A00D0A5B8 /* Stefan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stefan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46DDEC200E015A00D0A5B8 /* Stefan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stefan.h; sourceTree = "<group>"; };
 		AD46DDED200E015A00D0A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StefanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD46DDF3200E015A00D0A5B8 /* Stefan_iOS.framework in Frameworks */,
+				ADE50A9E2077B54A00E4660C /* Differ.framework in Frameworks */,
+				ADE50A9B2077B4B000E4660C /* Stefan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +161,7 @@
 		AD46DDEA200E015A00D0A5B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */,
+				AD46DDE9200E015A00D0A5B8 /* Stefan.framework */,
 				AD46DDF2200E015A00D0A5B8 /* StefanTests.xctest */,
 				AD46DE37200E065E00D0A5B8 /* StefanExample.app */,
 			);
@@ -299,7 +317,7 @@
 			);
 			name = "Stefan-iOS";
 			productName = Stefan;
-			productReference = AD46DDE9200E015A00D0A5B8 /* Stefan_iOS.framework */;
+			productReference = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AD46DDF1200E015A00D0A5B8 /* StefanTests */ = {
@@ -309,11 +327,12 @@
 				AD46DDEE200E015A00D0A5B8 /* Sources */,
 				AD46DDEF200E015A00D0A5B8 /* Frameworks */,
 				AD46DDF0200E015A00D0A5B8 /* Resources */,
+				ADE50AA22077B64A00E4660C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD46DDF5200E015A00D0A5B8 /* PBXTargetDependency */,
+				ADE50AA12077B5A300E4660C /* PBXTargetDependency */,
 			);
 			name = StefanTests;
 			productName = StefanTests;
@@ -345,17 +364,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = AppUnite;
 				TargetAttributes = {
 					AD46DDE8200E015A00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					AD46DDF1200E015A00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					AD46DE36200E065E00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
@@ -395,6 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE50A9F2077B58200E4660C /* Differ.framework in Resources */,
+				ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,15 +484,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AD46DDF5200E015A00D0A5B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */;
-			targetProxy = AD46DDF4200E015A00D0A5B8 /* PBXContainerItemProxy */;
-		};
 		AD46DE50200E0DB500D0A5B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */;
 			targetProxy = AD46DE4F200E0DB500D0A5B8 /* PBXContainerItemProxy */;
+		};
+		ADE50AA12077B5A300E4660C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD46DDE8200E015A00D0A5B8 /* Stefan-iOS */;
+			targetProxy = ADE50AA02077B5A300E4660C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,6 +530,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -516,6 +538,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -569,6 +592,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -576,6 +600,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -613,8 +638,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -627,7 +653,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.Stefan;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Stefan;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -640,8 +667,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -654,7 +682,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.Stefan;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Stefan;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -665,11 +694,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StefanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -679,11 +714,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StefanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

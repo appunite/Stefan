@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Stefan_iOS
+import Stefan
 
 class ViewController: UITableViewController, LoadableStatePlaceholderPresentable {
         

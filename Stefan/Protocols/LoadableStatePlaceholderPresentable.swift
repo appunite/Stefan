@@ -13,8 +13,8 @@ public protocol LoadableStatePlaceholderPresentable: class {
     ///
     /// Placeholder is accessible from here and can be customized
     ///
-    weak var placeholderView: LoadableStatePlaceholderView? { get set }
-    weak var placeholderContainer: UIView! { get }
+    var placeholderView: LoadableStatePlaceholderView? { get set }
+    var placeholderContainer: UIView! { get }
     
     func addPlaceholderView()
     func removePlaceholderView()

@@ -25,7 +25,7 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer {
     }
     
     // MARK: - Delegate
-    public var shouldReload: ((ReloadableView!) -> Bool) = { _ in return true }
+    public var shouldReload: ((ReloadableView) -> Bool) = { _ in return true }
     
     public var didChangeState: ((ItemsLoadableState<ItemType>) -> Void) = { _ in }
     
