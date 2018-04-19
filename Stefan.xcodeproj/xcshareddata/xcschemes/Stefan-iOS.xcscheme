@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD46DDE8200E015A00D0A5B8"
-               BuildableName = "Stefan_iOS.framework"
+               BuildableName = "Stefan.framework"
                BlueprintName = "Stefan-iOS"
                ReferencedContainer = "container:Stefan.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD46DDE8200E015A00D0A5B8"
-            BuildableName = "Stefan_iOS.framework"
+            BuildableName = "Stefan.framework"
             BlueprintName = "Stefan-iOS"
             ReferencedContainer = "container:Stefan.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD46DDE8200E015A00D0A5B8"
-            BuildableName = "Stefan_iOS.framework"
+            BuildableName = "Stefan.framework"
             BlueprintName = "Stefan-iOS"
             ReferencedContainer = "container:Stefan.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD46DDE8200E015A00D0A5B8"
-            BuildableName = "Stefan_iOS.framework"
+            BuildableName = "Stefan.framework"
             BlueprintName = "Stefan-iOS"
             ReferencedContainer = "container:Stefan.xcodeproj">
          </BuildableReference>
