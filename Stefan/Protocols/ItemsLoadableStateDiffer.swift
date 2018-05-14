@@ -63,7 +63,18 @@ extension ItemsLoadableStateDiffer {
             
             return .placeholderAndItems(oldItems: oldItems, newItems: newItems)
             
-        case (.refreshing, .refreshing(let rSilent, _)), (.error, .refreshing(let rSilent, _)), (.noContent, .refreshing(let rSilent, _)):
+        case (.refreshing(let lSilent, _), .refreshing(let rSilent, _)):
+            
+            if lSilent == false && rSilent == false {
+                // diff from fore refreshing to force refreshing
+                return .none
+            } else if rSilent {
+                return .placeholder
+            } else {
+                return .none
+            }
+            
+        case (.error, .refreshing(let rSilent, _)), (.noContent, .refreshing(let rSilent, _)):
             
             if rSilent {
                 return .none
