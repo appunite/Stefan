@@ -98,8 +98,10 @@ public class Stefan<ItemType: Equatable>: NSObject, ItemsLoadableStateDiffer {
         }
     }
     
-    public func reloadPlaceholder() {
-        placeholderPresenter?.reloadPlaceholder(forState: _state)
+    public func reloadPlaceholder(force: Bool = false) {
+        if force || shouldDisplayPlaceholder(_state) {
+            placeholderPresenter?.reloadPlaceholder(forState: _state)
+        }
     }
     
     private func reloadItems(old: [ItemType], new: [ItemType]) {
