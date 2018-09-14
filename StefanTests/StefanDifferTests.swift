@@ -7,8 +7,32 @@
 //
 
 import XCTest
-
+import DifferenceKit
 @testable import Stefan
+
+extension Array where Element: Differentiable {
+    public static func == (lhs: [Element], rhs: [Element]) -> Bool {
+        var equal = true
+        for (l, r) in zip(lhs, rhs) {
+            guard l.isContentEqual(to: r) == false else { continue }
+            equal = false
+            break
+        }
+        return equal
+    }
+}
+
+extension ItemReloadingResult: Equatable {
+    public static func == (lhs: ItemReloadingResult<ItemType>, rhs: ItemReloadingResult<ItemType>) -> Bool {
+        switch (lhs, rhs) {
+        case (.none, .none), (.placeholder, .placeholder): return true
+        case let (.items(lOld, lNew), .items(rOld, rNew)): return rOld == lOld && lNew == rNew
+        case let (.placeholderAndItems(lOld, lNew), .placeholderAndItems(rOld, rNew)): return rOld == lOld && lNew == rNew
+        case let (.itemsAndPlaceholder(lOld, lNew), .itemsAndPlaceholder(rOld, rNew)): return rOld == lOld && lNew == rNew
+        default: return false
+        }
+    }
+}
 
 class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
     
@@ -48,17 +72,6 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         
         diffResult = self.load(newState: new, withOld: old)
         expectedResult = ItemReloadingResult<Fruit>.placeholder
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    
-    func testFromIdleToIdle() {
-        old = .idle
-        new = .idle
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.none
         
         XCTAssertEqual(expectedResult, diffResult)
     }
@@ -153,82 +166,12 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         XCTAssertEqual(expectedResult, diffResult)
     }
     
-    func testFromRefreshingToLoaded() {
-        old = .refreshing(silent: false, items: FruitStorage.mediumFruits)
-        new = .loaded(items: FruitStorage.bigFruits)
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: FruitStorage.mediumFruits, newItems: FruitStorage.bigFruits)
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromNoContentToSilentRefresh() {
-        old = .noContent
-        new = .refreshing(silent: true, items: FruitStorage.mediumFruits)
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.none
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromNoContentToNonSilentRefresh() {
-        old = .noContent
-        new = .refreshing(silent: false, items: FruitStorage.mediumFruits)
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.placeholder
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromLoadedToSilentRefresh() {
-        old = .loaded(items: FruitStorage.bigFruits)
-        new = .refreshing(silent: true, items: FruitStorage.bigFruits)
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.none
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromLoadedToNonSilentRefresh() {
-        old = .loaded(items: FruitStorage.bigFruits)
-        new = .refreshing(silent: false, items: FruitStorage.bigFruits)
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
     func testFromLoadedToNoContent() {
         old = .loaded(items: FruitStorage.bigFruits)
         new = .noContent
         
         let diffResult = self.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromSilentRefreshToNoContent() {
-        old = .refreshing(silent: true, items: FruitStorage.bigFruits)
-        new = .noContent
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
-        
-        XCTAssertEqual(expectedResult, diffResult)
-    }
-    
-    func testFromNonSilentRefreshToNoContent() {
-        old = .refreshing(silent: false, items: FruitStorage.bigFruits)
-        new = .noContent
-        
-        let diffResult = self.load(newState: new, withOld: old)
-        let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
     }

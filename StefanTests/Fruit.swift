@@ -29,11 +29,13 @@ struct Fruit {
 }
 
 extension Fruit: Differentiable {
-    var differenceIdentifier: Fruit.DifferenceIdentifier {
-        return name.hashValue + size.hashValue
+    typealias DifferenceIdentifier = Int
+    
+    var differenceIdentifier: DifferenceIdentifier {
+        return name.hashValue
     }
     
     func isContentEqual(to source: Fruit) -> Bool {
-        return self.name = source.name && self.size == source.size
+        return self.name == source.name && self.size == source.size
     }
 }

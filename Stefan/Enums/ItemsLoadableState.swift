@@ -30,7 +30,7 @@ public enum ItemsLoadableState<T: Differentiable>: LoadableState {
         }
     }
     
-    public func items() throws -> [ItemType] {
+    public func items() -> [ItemType] {
         switch self {
         case let .loaded(items): return items
         default: return []
