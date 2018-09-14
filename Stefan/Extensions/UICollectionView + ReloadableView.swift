@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import Differ
+import DifferenceKit
 
 extension UICollectionView: ReloadableView {
-    
     public func reload() {
         self.reloadData()
     }
-    
-    public func reloadAnimated<ItemType>(old: [ItemType], new: [ItemType]) where ItemType: Equatable {
-        self.animateItemChanges(oldData: old, newData: new)
+
+    public func reload<C>(using stagedChangeset: StagedChangeset<C>, setData: (C) -> Void) where C : Collection {
+        self.reload(using: stagedChangeset, interrupt: nil, setData: setData)
     }
 }

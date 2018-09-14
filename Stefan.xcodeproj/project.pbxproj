@@ -37,12 +37,12 @@
 		AD46DE4E200E06F700D0A5B8 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE4D200E06F700D0A5B8 /* Fruit.swift */; };
 		AD46DE53200E143100D0A5B8 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */; };
 		AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */; };
-		AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
+		ADA22B47214C4E3600DE9A34 /* Stefan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
+		ADA22B48214C4E4000DE9A34 /* DifferenceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA22B45214C4E2D00DE9A34 /* DifferenceKit.framework */; };
+		ADA22B49214C4E5200DE9A34 /* DifferenceKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADA22B45214C4E2D00DE9A34 /* DifferenceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADA22B4B214C585900DE9A34 /* DifferenceKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADA22B45214C4E2D00DE9A34 /* DifferenceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADE50A9B2077B4B000E4660C /* Stefan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
 		ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
-		ADE50A9E2077B54A00E4660C /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
-		ADE50A9F2077B58200E4660C /* Differ.framework in Resources */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
-		ADE50AA32077B65600E4660C /* Differ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */; };
 		ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */; };
 /* End PBXBuildFile section */
@@ -65,13 +65,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		ADA22B4A214C584E00DE9A34 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ADA22B4B214C585900DE9A34 /* DifferenceKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE50AA22077B64A00E4660C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ADE50AA32077B65600E4660C /* Differ.framework in CopyFiles */,
+				ADA22B49214C4E5200DE9A34 /* DifferenceKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +124,7 @@
 		AD46DE4D200E06F700D0A5B8 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		AD46DE52200E143100D0A5B8 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 		AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanTestController.swift; sourceTree = "<group>"; };
-		AD8ACAEF20109B1B00CBDD0A /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
+		ADA22B45214C4E2D00DE9A34 /* DifferenceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DifferenceKit.framework; path = Carthage/Build/iOS/DifferenceKit.framework; sourceTree = "<group>"; };
 		ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
 		ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + LoadableStatePlaceholderPresentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8ACAF020109B1B00CBDD0A /* Differ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE50A9E2077B54A00E4660C /* Differ.framework in Frameworks */,
 				ADE50A9B2077B4B000E4660C /* Stefan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA22B48214C4E4000DE9A34 /* DifferenceKit.framework in Frameworks */,
+				ADA22B47214C4E3600DE9A34 /* Stefan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +293,7 @@
 		AD8ACAEE20109B1B00CBDD0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD8ACAEF20109B1B00CBDD0A /* Differ.framework */,
+				ADA22B45214C4E2D00DE9A34 /* DifferenceKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -346,6 +356,7 @@
 				AD46DE33200E065E00D0A5B8 /* Sources */,
 				AD46DE34200E065E00D0A5B8 /* Frameworks */,
 				AD46DE35200E065E00D0A5B8 /* Resources */,
+				ADA22B4A214C584E00DE9A34 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -369,15 +380,17 @@
 				TargetAttributes = {
 					AD46DDE8200E015A00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 					AD46DDF1200E015A00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 					AD46DE36200E065E00D0A5B8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -414,7 +427,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE50A9F2077B58200E4660C /* Differ.framework in Resources */,
 				ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,7 +669,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -685,7 +697,7 @@
 				PRODUCT_NAME = Stefan;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -705,7 +717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -725,7 +737,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -735,12 +747,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StefanExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -750,12 +766,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StefanExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppUnite.StefanExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

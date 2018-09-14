@@ -7,11 +7,9 @@
 //
 
 import Foundation
+import DifferenceKit
 
-public protocol ReloadableView: class {
-    
+public protocol ReloadableView: class {    
     func reload()
-    
-    func reloadAnimated<ItemType: Equatable>(old: [ItemType], new: [ItemType])
-    
+    func reload<C>(using stagedChangeset: DifferenceKit.StagedChangeset<C>, setData: (C) -> Void) where C : Collection
 }

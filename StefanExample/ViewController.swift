@@ -36,12 +36,7 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: { [unowned self] in
             self.stefan.load(newState: .loaded(items: FruitStorage.bigFruits))
         })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [unowned self] in
-            let currentItems = (try? self.stefan.state.items()) ?? []
-            self.stefan.load(newState: .refreshing(silent: true, items: currentItems))
-        })
-        
+    
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: { [unowned self] in
             self.stefan.load(newState: .loaded(items: FruitStorage.mediumFruits))
         })
@@ -53,11 +48,7 @@ class ViewController: UITableViewController, LoadableStatePlaceholderPresentable
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: { [unowned self] in
             self.stefan.load(newState: .noContent)
         })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: { [unowned self] in
-            let currentItems = (try? self.stefan.state.items()) ?? []
-            self.stefan.load(newState: .refreshing(silent: false, items: currentItems))
-        })
+
         
         tableView.tableFooterView = UIView()
     }

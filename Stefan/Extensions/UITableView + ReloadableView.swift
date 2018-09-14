@@ -7,18 +7,15 @@
 //
 
 import UIKit
-import Differ
+import DifferenceKit
 
 extension UITableView: ReloadableView {
 
     public func reload() {
         self.reloadData()
     }
-
-    public func reloadAnimated<ItemType>(old: [ItemType], new: [ItemType]) where ItemType: Equatable {
-        let diff = old.extendedDiff(new)
-        
-        // for now lets use fade animation, but we need to implement that better
-        self.apply(diff, deletionAnimation: .fade, insertionAnimation: .fade)
+    
+    public func reload<C>(using stagedChangeset: StagedChangeset<C>, setData: (C) -> Void) where C : Collection {
+        reload(using: stagedChangeset, with: .automatic, setData: setData)
     }
 }

@@ -61,7 +61,7 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
     public lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.frame = CGRect(origin: CGPoint.zero, size: metrics.activityIndicatorSize)
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.style = .whiteLarge
         
         return activityIndicator
     }()

@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import DifferenceKit
 
-public enum ItemReloadingResult<ItemType: Equatable> {
+public enum ItemReloadingResult<ItemType: Differentiable> {
     
     ///
     /// Nothing to change on screen
@@ -34,28 +35,5 @@ public enum ItemReloadingResult<ItemType: Equatable> {
     /// First collection then placeholder
     ///
     case itemsAndPlaceholder(oldItems: [ItemType], newItems: [ItemType])
-    
-}
-
-extension ItemReloadingResult: Equatable {
-    
-    public static func == (lhs: ItemReloadingResult<ItemType>, rhs: ItemReloadingResult<ItemType>) -> Bool {
-        
-        switch(lhs, rhs) {
-            
-        case (.none, .none), (.placeholder, .placeholder):
-            return true
-        case (.items(let lOldItems, let lNewItems), .items(let rOldItems, let rNewItems)):
-            return lOldItems == rOldItems && lNewItems == rNewItems
-        case (.placeholderAndItems(let lOldItems, let lNewItems), .placeholderAndItems(let rOldItems, let rNewItems)):
-            return lOldItems == rOldItems && lNewItems == rNewItems
-        case (.itemsAndPlaceholder(let lOldItems, let lNewItems), .itemsAndPlaceholder(let rOldItems, let rNewItems)):
-            return lOldItems == rOldItems && lNewItems == rNewItems
-        default:
-            return false
-        }
-    }
-    
-    
     
 }

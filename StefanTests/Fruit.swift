@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DifferenceKit
 
 enum FruitSize {
     
@@ -27,11 +28,12 @@ struct Fruit {
     
 }
 
-extension Fruit: Equatable {
-    
-    static func == (lhs: Fruit, rhs: Fruit) -> Bool {
-        return lhs.name == rhs.name &&
-            lhs.size == rhs.size
+extension Fruit: Differentiable {
+    var differenceIdentifier: Fruit.DifferenceIdentifier {
+        return name.hashValue + size.hashValue
     }
     
+    func isContentEqual(to source: Fruit) -> Bool {
+        return self.name = source.name && self.size == source.size
+    }
 }

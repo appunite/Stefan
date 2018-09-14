@@ -34,8 +34,6 @@ extension LoadableStatePlaceholderDefaultViewDataSource {
             return ""
         case .noContent:
             return "No content"
-        case .refreshing:
-            return "Refreshing"
         case .loading:
             return "Loading"
         case .error:
@@ -51,7 +49,7 @@ extension LoadableStatePlaceholderDefaultViewDataSource {
         switch state {
         case .idle, .loaded, .noContent:
             return ""
-        case .refreshing, .loading:
+        case .loading:
             return "Please wait"
         case .error(let error):
             return error.localizedDescription
@@ -64,12 +62,8 @@ extension LoadableStatePlaceholderDefaultViewDataSource {
     
     public func shouldIndicatorAnimate<ItemType>(forState state: ItemsLoadableState<ItemType>) -> Bool {
         switch state {
-        case .loading:
-            return true
-        case .refreshing(let silent, _):
-            return silent == false
-        default:
-            return false
+        case .loading: return true
+        default: return false
         }
     }
 }
