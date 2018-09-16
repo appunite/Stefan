@@ -9,25 +9,12 @@
 import Foundation
 
 public protocol LoadableStatePlaceholderDefaultViewDataSource: class {
-    
-    ///
-    /// Provide image / subtitle / indicator triggering values for placeholder
-    ///
-    
     func title<ItemType>(forState state: ItemsLoadableState<ItemType>) -> String
-    
     func subtitle<ItemType>(forState state: ItemsLoadableState<ItemType>) -> String
-    
     func shouldIndicatorAnimate<ItemType>(forState state: ItemsLoadableState<ItemType>) -> Bool
-
 }
 
 extension LoadableStatePlaceholderDefaultViewDataSource {
-    
-    ///
-    /// Default title provider for placeholder
-    ///
-    
     public func title<ItemType>(forState state: ItemsLoadableState<ItemType>) -> String {
         switch state {
         case .idle, .loaded:
@@ -41,10 +28,6 @@ extension LoadableStatePlaceholderDefaultViewDataSource {
         }
     }
     
-    ///
-    /// Default subtitle provider for placeholder
-    ///
-    
     public func subtitle<ItemType>(forState state: ItemsLoadableState<ItemType>) -> String {
         switch state {
         case .idle, .loaded, .noContent:
@@ -55,11 +38,7 @@ extension LoadableStatePlaceholderDefaultViewDataSource {
             return error.localizedDescription
         }
     }
-    
-    ///
-    /// Default indicator animation state provider for placeholder
-    ///
-    
+
     public func shouldIndicatorAnimate<ItemType>(forState state: ItemsLoadableState<ItemType>) -> Bool {
         switch state {
         case .loading: return true

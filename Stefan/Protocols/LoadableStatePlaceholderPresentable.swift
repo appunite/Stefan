@@ -9,42 +9,23 @@
 import UIKit
 
 public protocol LoadableStatePlaceholderPresentable: class {
-    
-    ///
-    /// Placeholder is accessible from here and can be customized
-    ///
-    var placeholderView: LoadableStatePlaceholderView? { get set }
+    var placeholderView: LoadableStatePlaceholderView? { get set } // to do as associated object
     var placeholderContainer: UIView! { get }
     
     func addPlaceholderView()
     func removePlaceholderView()
-    
-    ///
-    /// Custom placeholder provider
-    ///
     func customPlaceholderView() -> LoadableStatePlaceholderView
-    
-    ///
-    /// Indicates is placeholder visible on the screen
-    ///
     func isDisplayingPlaceholder() -> Bool
-    
-    ///
-    /// Reload placeholder implicilty for needed state (should be avoided)
-    ///
     func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>)
-    
 }
 
 extension LoadableStatePlaceholderPresentable {
     
     public func customPlaceholderView() -> LoadableStatePlaceholderView {
-        
         return LoadableStatePlaceholderDefaultView()
     }
     
     public func reloadPlaceholder<ItemType>(forState newState: ItemsLoadableState<ItemType>) {
-        
         if self.placeholderView == nil {
             self.addPlaceholderView()
         }
@@ -57,21 +38,16 @@ extension LoadableStatePlaceholderPresentable {
     }
     
     public func addPlaceholderView() {
-        
         let placeholder = customPlaceholderView()
-        
         placeholder.translatesAutoresizingMaskIntoConstraints = false
-        
         placeholderContainer.insertSubview(placeholder, at: 0)
         
-        let constraints = [
+        NSLayoutConstraint.activate([
             placeholder.heightAnchor.constraint(equalTo: placeholderContainer.heightAnchor),
             placeholder.widthAnchor.constraint(equalTo: placeholderContainer.widthAnchor),
             placeholder.centerXAnchor.constraint(equalTo: placeholderContainer.centerXAnchor),
             placeholder.centerYAnchor.constraint(equalTo: placeholderContainer.centerYAnchor)
-        ]
-        
-        NSLayoutConstraint.activate(constraints)
+        ])
         
         self.placeholderView = placeholder
         placeholder.setupView()
@@ -82,7 +58,6 @@ extension LoadableStatePlaceholderPresentable {
     }
     
     public func removePlaceholderView() {
-        
         self.placeholderView?.removeFromSuperview()
         self.placeholderView = nil
     }

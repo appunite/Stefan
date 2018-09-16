@@ -10,7 +10,6 @@ import Foundation
 import DifferenceKit
 
 public enum ItemsLoadableState<T: Differentiable>: LoadableState {
-
     public typealias ItemType = T
 
     case idle

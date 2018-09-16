@@ -10,7 +10,6 @@ import Foundation
 import DifferenceKit
 
 public enum ItemReloadingResult<ItemType: Differentiable> {
-    
     ///
     /// Nothing to change on screen
     ///
@@ -35,5 +34,4 @@ public enum ItemReloadingResult<ItemType: Differentiable> {
     /// First collection then placeholder
     ///
     case itemsAndPlaceholder(oldItems: [ItemType], newItems: [ItemType])
-    
 }

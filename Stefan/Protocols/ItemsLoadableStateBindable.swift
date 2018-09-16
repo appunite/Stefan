@@ -9,6 +9,5 @@
 import Foundation
 
 public protocol ItemsLoadableStateBindable {
-    
     func bind<ItemType>(withState state: ItemsLoadableState<ItemType>)
 }

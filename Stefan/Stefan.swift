@@ -9,18 +9,17 @@
 import Foundation
 import DifferenceKit
 
-public class Stefan<ItemType: Differentiable>: NSObject, ItemsLoadableStateDiffer {
+public class Stefan<ItemType: Differentiable>: NSObject {
     public weak var statesDiffer: ItemsLoadableStateDiffer?
     public weak var placeholderPresenter: LoadableStatePlaceholderPresentable?
     public weak var reloadableView: ReloadableView?
     public let reloadingType: ReloadingType
     
-    private var _state: ItemsLoadableState<ItemType> = .idle // teporary public for writing reactive extension
+    private var _state: ItemsLoadableState<ItemType> = .idle
     public var state: ItemsLoadableState<ItemType> {
         return _state
     }
     
-    // MARK: - Delegate
     public var shouldReload: ((ReloadableView) -> Bool) = { _ in return true }
     public var didChangeState: ((ItemsLoadableState<ItemType>) -> Void) = { _ in }
     public var shouldDisplayPlaceholder: ((ItemsLoadableState<ItemType>) -> Bool) = { state in
@@ -29,8 +28,6 @@ public class Stefan<ItemType: Differentiable>: NSObject, ItemsLoadableStateDiffe
         default: return true
         }
     }
-    
-    // MARK: - Init
     
     public init(reloadingType: ReloadingType = .basic) {
         self.reloadingType = reloadingType
@@ -55,27 +52,15 @@ public class Stefan<ItemType: Differentiable>: NSObject, ItemsLoadableStateDiffe
         case .none where shouldDisplayPlaceholder(newState) == false:
             placeholderPresenter?.removePlaceholderView()
         case .placeholder:
-            if shouldDisplayPlaceholder(newState) {
-                placeholderPresenter?.reloadPlaceholder(forState: newState)
-            } else {
-                placeholderPresenter?.removePlaceholderView()
-            }
+            reloadPlaceholderOrRemove(forState: newState)
         case let .items(oldItems: oldItems, newItems: newItems):
             reloadItems(old: oldItems, new: newItems, newState: newState)
         case let .placeholderAndItems(oldItems: oldItems, newItems: newItems):
-            if shouldDisplayPlaceholder(newState) {
-                placeholderPresenter?.reloadPlaceholder(forState: newState)
-            } else {
-                placeholderPresenter?.removePlaceholderView()
-            }
+            reloadPlaceholderOrRemove(forState: newState)
             reloadItems(old: oldItems, new: newItems, newState: newState)
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             reloadItems(old: oldItems, new: newItems, newState: newState)
-            if shouldDisplayPlaceholder(newState) {
-                placeholderPresenter?.reloadPlaceholder(forState: newState)
-            } else {
-                placeholderPresenter?.removePlaceholderView()
-            }
+            reloadPlaceholderOrRemove(forState: newState)
         default: break
         }
     }
@@ -83,6 +68,14 @@ public class Stefan<ItemType: Differentiable>: NSObject, ItemsLoadableStateDiffe
     public func reloadPlaceholder(force: Bool = false) {
         if force || shouldDisplayPlaceholder(_state) {
             placeholderPresenter?.reloadPlaceholder(forState: _state)
+        }
+    }
+    
+    private func reloadPlaceholderOrRemove(forState state: ItemsLoadableState<ItemType>) {
+        if shouldDisplayPlaceholder(state) {
+            placeholderPresenter?.reloadPlaceholder(forState: state)
+        } else {
+            placeholderPresenter?.removePlaceholderView()
         }
     }
     
@@ -110,5 +103,33 @@ public class Stefan<ItemType: Differentiable>: NSObject, ItemsLoadableStateDiffe
         guard let reloadableView = self.reloadableView else { return false }
         return shouldReload(reloadableView)
     }
-    
+}
+
+extension Stefan: ItemsLoadableStateDiffer {
+    public func load<ItemType>(newState new: ItemsLoadableState<ItemType>, withOld old: ItemsLoadableState<ItemType>) -> ItemReloadingResult<ItemType> {
+        switch(old, new) {
+        case(.idle, _):
+            guard case let .loaded(newItems) = new else { return .placeholder }
+            return .placeholderAndItems(oldItems: [], newItems: newItems)
+        case (_, .idle):
+            fatalError("Wrong change of state - idle is only for initial state")
+        case (.loading, .loading), (.noContent, .noContent):
+            return .none
+        case (.loading, .noContent), (.noContent, .loading),
+             (.loading, .error), (.error, .loading),
+             (.noContent, .error), (.error, .noContent),
+             (.error, .error):
+            return .placeholder
+        case (.loading, .loaded(let newItems)),
+             (.error, .loaded(let newItems)),
+             (.noContent, .loaded(let newItems)):
+            return .placeholderAndItems(oldItems: [], newItems: newItems)
+        case (.loaded(let oldItems), .loaded(let newItems)):
+            return .items(oldItems: oldItems, newItems: newItems)
+        case (.loaded(let oldItems), .noContent),
+             (.loaded(let oldItems), .error),
+             (.loaded(let oldItems), .loading):
+            return .itemsAndPlaceholder(oldItems: oldItems, newItems: [])
+        }
+    }
 }

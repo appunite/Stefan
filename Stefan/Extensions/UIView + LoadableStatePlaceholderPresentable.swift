@@ -9,7 +9,6 @@
 import UIKit
 
 extension LoadableStatePlaceholderPresentable where Self: UIView {
-    
     public weak var placeholderContainer: UIView! {
         return self
     }

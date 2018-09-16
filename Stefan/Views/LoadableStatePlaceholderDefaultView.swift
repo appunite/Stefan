@@ -9,11 +9,9 @@
 import UIKit
 
 public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholderView, ItemsLoadableStateBindable, LoadableStatePlaceholderDefaultViewDataSource {
-   
     ///
     /// Metrics should be provided in init
     ///
-    
     public struct Metrics {
         public let activityIndicatorSize: CGSize
         public let spacing: CGFloat
@@ -102,13 +100,10 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         stackView.addArrangedSubview(activityIndicator)
-        
     }
-    
     ///
     /// This view should not be loaded in storyboard / xib
     ///
-    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -116,7 +111,6 @@ public final class LoadableStatePlaceholderDefaultView: LoadableStatePlaceholder
     ///
     /// Binds ItemsLoadableState with labels / activityIndicator ...
     ///
-    
     public func bind<ItemType>(withState state: ItemsLoadableState<ItemType>) {
         self.titleLabel.text = dataSource?.title(forState: state)
         self.subtitleLabel.text = dataSource?.subtitle(forState: state)

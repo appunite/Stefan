@@ -10,7 +10,6 @@ import UIKit
 import DifferenceKit
 
 extension UITableView: ReloadableView {
-
     public func reload() {
         self.reloadData()
     }

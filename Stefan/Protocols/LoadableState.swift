@@ -9,8 +9,6 @@
 import Foundation
 
 public protocol LoadableState: LoadableStateType {
-    
     var itemsCount: Int { get }
     func items() throws -> [ItemType]
-    
 }

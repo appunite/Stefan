@@ -17,5 +17,4 @@ open class LoadableStatePlaceholderView: UIView {
     public func setupView() {
 
     }
-    
 }
