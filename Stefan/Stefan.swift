@@ -37,11 +37,6 @@ public class Stefan<ItemType: Differentiable>: NSObject {
 
     public func load(newState: ItemsLoadableState<ItemType>) {
         let old = self._state
-        
-        if !newState.isLoaded {
-            self._state = newState
-            didChangeState(newState)
-        }
     
         guard let reloadingResult = statesDiffer?.load(newState: newState, withOld: old) else {
             assertionFailure("States differ not set when loading new state")
@@ -49,9 +44,12 @@ public class Stefan<ItemType: Differentiable>: NSObject {
         }
 
         switch reloadingResult {
-        case .none where shouldDisplayPlaceholder(newState) == false:
+        case .none:
+            setState(newState)
+            guard shouldDisplayPlaceholder(newState) == false else { break }
             placeholderPresenter?.removePlaceholderView()
         case .placeholder:
+            setState(newState)
             reloadPlaceholderOrRemove(forState: newState)
         case let .items(oldItems: oldItems, newItems: newItems):
             reloadItems(old: oldItems, new: newItems, newState: newState)
@@ -61,7 +59,6 @@ public class Stefan<ItemType: Differentiable>: NSObject {
         case let .itemsAndPlaceholder(oldItems: oldItems, newItems: newItems):
             reloadItems(old: oldItems, new: newItems, newState: newState)
             reloadPlaceholderOrRemove(forState: newState)
-        default: break
         }
     }
     
@@ -69,6 +66,11 @@ public class Stefan<ItemType: Differentiable>: NSObject {
         if force || shouldDisplayPlaceholder(_state) {
             placeholderPresenter?.reloadPlaceholder(forState: _state)
         }
+    }
+    
+    private func setState(_ newState: ItemsLoadableState<ItemType>) {
+        self._state = newState
+        didChangeState(newState)
     }
     
     private func reloadPlaceholderOrRemove(forState state: ItemsLoadableState<ItemType>) {
@@ -80,23 +82,32 @@ public class Stefan<ItemType: Differentiable>: NSObject {
     }
     
     private func reloadItems(old: [ItemType], new: [ItemType], newState: ItemsLoadableState<ItemType>) {
-        guard shouldReloadView() else { return }
-        switch reloadingType {
-        case .animated:
-            let changeSet = StagedChangeset(source: old, target: new)
-            reloadableView?.reload(using: changeSet, setData: {
-                guard newState.isLoaded else { return }
-                let temporaryState = ItemsLoadableState($0)
-                _state = temporaryState
-                didChangeState(temporaryState)
-            })
-        case .basic:
-            if newState.isLoaded {
-                _state = newState
-                didChangeState(newState)
-            }
-            reloadableView?.reload()
+        guard shouldReloadView() else {
+            setState(newState)
+            return
         }
+        
+        switch reloadingType {
+        case .animated: reloadItemsAnimated(old: old, new: new, newState: newState)
+        case .basic: reloadItemsWithoutAnimation(newState: newState)
+        }
+    }
+    
+    private func reloadItemsAnimated(old: [ItemType], new: [ItemType], newState: ItemsLoadableState<ItemType>) {
+        let changeSet = StagedChangeset(source: old, target: new)
+        if changeSet.count == 0 {
+            setState(newState)
+        } else {
+            reloadableView?.reload(using: changeSet, setData: {
+                let temporaryState = newState.withModifiedItems($0)
+                setState(temporaryState)
+            })
+        }
+    }
+    
+    private func reloadItemsWithoutAnimation(newState: ItemsLoadableState<ItemType>) {
+        setState(newState)
+        reloadableView?.reload()
     }
     
     private func shouldReloadView() -> Bool {

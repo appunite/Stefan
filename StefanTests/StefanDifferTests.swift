@@ -34,12 +34,13 @@ extension ItemReloadingResult: Equatable {
     }
 }
 
-class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
+class StefanDifferTests: XCTestCase {
     
     enum StefanDifferTestsError: Error {
         case someError
     }
     
+    let sut = Stefan<Fruit>(reloadingType: .basic)
     var old: ItemsLoadableState<Fruit>!
     var new: ItemsLoadableState<Fruit>!
     
@@ -51,7 +52,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .idle
         new = .loaded(items: FruitStorage.bigFruits)
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -62,7 +63,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .idle
         new = .loading
         
-        var diffResult = self.load(newState: new, withOld: old)
+        var diffResult = sut.load(newState: new, withOld: old)
         var expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -70,7 +71,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .idle
         new = .noContent
         
-        diffResult = self.load(newState: new, withOld: old)
+        diffResult = sut.load(newState: new, withOld: old)
         expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -80,7 +81,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loading
         new = .loading
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -90,7 +91,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .noContent
         new = .noContent
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.none
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -100,7 +101,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .noContent
         new = .loading
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -110,7 +111,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loading
         new = .noContent
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -120,7 +121,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loading
         new = .noContent
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.placeholder
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -130,7 +131,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loading
         new = .loaded(items: FruitStorage.bigFruits)
 
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -140,7 +141,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .noContent
         new = .loaded(items: FruitStorage.bigFruits)
 
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -150,7 +151,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .error(StefanDifferTestsError.someError)
         new = .loaded(items: FruitStorage.bigFruits)
 
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.placeholderAndItems(oldItems: [], newItems: FruitStorage.bigFruits)
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -160,7 +161,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loaded(items: FruitStorage.mediumFruits)
         new = .loaded(items: FruitStorage.bigFruits)
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult.items(oldItems: FruitStorage.mediumFruits, newItems: FruitStorage.bigFruits)
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -170,7 +171,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .loaded(items: FruitStorage.bigFruits)
         new = .noContent
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let expectedResult = ItemReloadingResult<Fruit>.itemsAndPlaceholder(oldItems: FruitStorage.bigFruits, newItems: [])
         
         XCTAssertEqual(expectedResult, diffResult)
@@ -181,7 +182,7 @@ class StefanDifferTests: XCTestCase, ItemsLoadableStateDiffer {
         old = .idle
         new = .noContent
         
-        let diffResult = self.load(newState: new, withOld: old)
+        let diffResult = sut.load(newState: new, withOld: old)
         let wrongResult = ItemReloadingResult<Fruit>.none
         
         XCTAssertNotEqual(wrongResult, diffResult)

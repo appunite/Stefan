@@ -43,6 +43,13 @@ public enum ItemsLoadableState<T: Differentiable>: LoadableState {
         }
     }
     
+    func withModifiedItems(_ newItems: [ItemType]) -> ItemsLoadableState<ItemType> {
+        switch self {
+        case .idle, .loading, .error, .noContent: return self
+        case .loaded: return .loaded(items: newItems)
+        }
+    }
+    
     private static func setStateForItems(_ items: [ItemType]) -> ItemsLoadableState<ItemType> {
         return items.isEmpty ? .noContent : .loaded(items: items)
     }
