@@ -346,6 +346,7 @@
 				AD46DE33200E065E00D0A5B8 /* Sources */,
 				AD46DE34200E065E00D0A5B8 /* Frameworks */,
 				AD46DE35200E065E00D0A5B8 /* Resources */,
+				2D72EADF2254D35A00C56979 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -432,6 +433,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D72EADF2254D35A00C56979 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD46DDE4200E015A00D0A5B8 /* Sources */ = {
