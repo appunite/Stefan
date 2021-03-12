@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F0D080F25FBC52D00318C49 /* Differ.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0D080E25FBC52D00318C49 /* Differ.xcframework */; };
-		0F0D081025FBC52D00318C49 /* Differ.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0D080E25FBC52D00318C49 /* Differ.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F0D081C25FBC57F00318C49 /* Differ.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F0D081B25FBC57F00318C49 /* Differ.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD06B8EE202758BF000A1736 /* ItemsLoadableStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */; };
 		AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */; };
@@ -71,7 +70,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0F0D081025FBC52D00318C49 /* Differ.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
