@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DE58E042747EF78001E456D /* Differ.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE58E022747D9F4001E456D /* Differ.xcframework */; };
-		2DE58E052747F00A001E456D /* Differ.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE58E022747D9F4001E456D /* Differ.xcframework */; };
-		2DE58E082747F036001E456D /* Differ.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DE58E022747D9F4001E456D /* Differ.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DE58E092747F03D001E456D /* Differ.xcframework in Resources */ = {isa = PBXBuildFile; fileRef = 2DE58E022747D9F4001E456D /* Differ.xcframework */; };
-		2DE58E0A2747F069001E456D /* Differ.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE58E022747D9F4001E456D /* Differ.xcframework */; };
+		0F0D080F25FBC52D00318C49 /* Differ.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0D080E25FBC52D00318C49 /* Differ.xcframework */; };
+		0F0D081025FBC52D00318C49 /* Differ.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0D080E25FBC52D00318C49 /* Differ.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0F0D081C25FBC57F00318C49 /* Differ.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F0D081B25FBC57F00318C49 /* Differ.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD06B8EE202758BF000A1736 /* ItemsLoadableStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */; };
 		AD0C13962012B6A800CEA0D0 /* ReloadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */; };
 		AD127C35202719FE00486A0A /* StefanDifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127C34202719FE00486A0A /* StefanDifferTests.swift */; };
@@ -44,6 +42,7 @@
 		AD5E9D55202B0AE300D0AD2B /* StefanTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9D54202B0AE300D0AD2B /* StefanTestController.swift */; };
 		ADE50A9B2077B4B000E4660C /* Stefan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
 		ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */ = {isa = PBXBuildFile; fileRef = AD46DDE9200E015A00D0A5B8 /* Stefan.framework */; };
+		ADE50A9E2077B54A00E4660C /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACAEF20109B1B00CBDD0A /* Differ.framework */; };
 		ADFB2E05202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB2E04202534440002A1FF /* UIView + LoadableStatePlaceholderPresentable.swift */; };
 		ADFBA0D22020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFBA0D12020E2E30044D94E /* UIViewController + LoadableStatePlaceholderPresentable.swift */; };
 /* End PBXBuildFile section */
@@ -66,20 +65,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0F0D081125FBC52D00318C49 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F0D081025FBC52D00318C49 /* Differ.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE50AA22077B64A00E4660C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2DE58E082747F036001E456D /* Differ.xcframework in CopyFiles */,
+				0F0D081C25FBC57F00318C49 /* Differ.xcframework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2DE58E022747D9F4001E456D /* Differ.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Differ.xcframework; path = Carthage/Build/Differ.xcframework; sourceTree = "<group>"; };
+		0F0D080E25FBC52D00318C49 /* Differ.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Differ.xcframework; path = Carthage/Build/Differ.xcframework; sourceTree = "<group>"; };
+		0F0D081525FBC55F00318C49 /* Differ.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Differ.xcframework; path = Carthage/Build/Differ.xcframework; sourceTree = "<group>"; };
+		0F0D081B25FBC57F00318C49 /* Differ.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Differ.xcframework; path = Carthage/Build/Differ.xcframework; sourceTree = "<group>"; };
 		AD06B8ED202758BF000A1736 /* ItemsLoadableStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadableStateTests.swift; sourceTree = "<group>"; };
 		AD0C13952012B6A800CEA0D0 /* ReloadingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingType.swift; sourceTree = "<group>"; };
 		AD127C34202719FE00486A0A /* StefanDifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StefanDifferTests.swift; sourceTree = "<group>"; };
@@ -126,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE58E042747EF78001E456D /* Differ.xcframework in Frameworks */,
+				0F0D080F25FBC52D00318C49 /* Differ.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +165,8 @@
 		AD46DDDF200E015A00D0A5B8 = {
 			isa = PBXGroup;
 			children = (
+				0F0D081525FBC55F00318C49 /* Differ.xcframework */,
+				0F0D081B25FBC57F00318C49 /* Differ.xcframework */,
 				AD46DDEB200E015A00D0A5B8 /* Stefan */,
 				AD46DDF6200E015A00D0A5B8 /* StefanTests */,
 				AD46DE38200E065E00D0A5B8 /* StefanExample */,
@@ -286,7 +300,7 @@
 		AD8ACAEE20109B1B00CBDD0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DE58E022747D9F4001E456D /* Differ.xcframework */,
+				0F0D080E25FBC52D00318C49 /* Differ.xcframework */,
 				AD8ACAEF20109B1B00CBDD0A /* Differ.framework */,
 			);
 			name = Frameworks;
@@ -314,6 +328,7 @@
 				AD46DDE5200E015A00D0A5B8 /* Frameworks */,
 				AD46DDE6200E015A00D0A5B8 /* Headers */,
 				AD46DDE7200E015A00D0A5B8 /* Resources */,
+				0F0D081125FBC52D00318C49 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,7 +435,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE58E092747F03D001E456D /* Differ.xcframework in Resources */,
 				ADE50A9C2077B4BA00E4660C /* Stefan.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
