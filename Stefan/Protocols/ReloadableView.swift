@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ReloadableView: class {
+public protocol ReloadableView: AnyObject {
     
     func reload()
     
