@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol LoadableStatePlaceholderPresentable: class {
+public protocol LoadableStatePlaceholderPresentable: AnyObject {
     
     ///
     /// Placeholder is accessible from here and can be customized

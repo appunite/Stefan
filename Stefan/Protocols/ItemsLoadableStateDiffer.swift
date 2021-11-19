@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ItemsLoadableStateDiffer: class {
+public protocol ItemsLoadableStateDiffer: AnyObject {
     
     ///
     /// If you want you can provide custom states applier
