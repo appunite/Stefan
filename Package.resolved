@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "differ",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appunite/Differ",
+      "state" : {
+        "revision" : "747d0cce14e8c4e4c52f9267c909d3845494822b",
+        "version" : "1.4.6"
+      }
+    }
+  ],
+  "version" : 2
+}
